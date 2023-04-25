@@ -1,0 +1,6 @@
+{
+  "databaseURL": "https://Khurshid-s-workspace-p7n7vo.us-east-1.xata.sh/db/new-portfolio",
+  "codegen": {
+    "output": "src/xata.ts"
+  }
+}

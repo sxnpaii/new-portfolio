@@ -1,0 +1,21 @@
+.Portfolio {
+  @apply sm:mt-32;
+  .Heading {
+    @apply text-6xl text-center mb-[60px];
+  }
+
+  .Block {
+    @apply columns-3 cursor-pointer;
+    .Work {
+      @apply relative transition overflow-hidden my-5;
+      .hovered {
+        @apply absolute top-0 opacity-0 w-full h-full;
+        transition: all 330ms;
+      }
+      &:hover .hovered {
+        @apply opacity-100;
+        background: rgba(0, 0, 0, .5);
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.About {
+  @apply sm:mt-32;
+  .Heading {
+    @apply text-6xl text-center mb-[60px]
+  }
+
+  .Block {
+    @apply md:flex-nowrap items-center sm:justify-center gap-8;
+    .Text {
+      @apply lg:w-1/2;
+    }
+
+    .img {
+      @apply w-full xl:max-w-[540px] sm:max-w-[380px] sm:max-h-[805px] rounded-2xl;
+      //background: url("/About.png") no-repeat center center / cover;
+    }
+  }
+}
