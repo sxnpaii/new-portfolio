@@ -15,16 +15,24 @@ const tables = [
       { name: "published_date", type: "datetime" },
       { name: "content", type: "text" },
       { name: "tags", type: "multiple" },
+      { name: "img_cover_url", type: "string" },
     ],
   },
   {
-    name: "portfolio",
+    name: "Portfolio",
     columns: [
       { name: "source", type: "string" },
       { name: "description", type: "text" },
       { name: "project", type: "string" },
       { name: "gh_repo", type: "string" },
       { name: "file_in_tg", type: "string" },
+    ],
+  },
+  {
+    name: "Users",
+    columns: [
+      { name: "Username", type: "string" },
+      { name: "Password", type: "string" },
     ],
   },
 ] as const;
@@ -35,12 +43,16 @@ export type InferredTypes = SchemaInference<SchemaTables>;
 export type Posts = InferredTypes["Posts"];
 export type PostsRecord = Posts & XataRecord;
 
-export type Portfolio = InferredTypes["portfolio"];
+export type Portfolio = InferredTypes["Portfolio"];
 export type PortfolioRecord = Portfolio & XataRecord;
+
+export type Users = InferredTypes["Users"];
+export type UsersRecord = Users & XataRecord;
 
 export type DatabaseSchema = {
   Posts: PostsRecord;
-  portfolio: PortfolioRecord;
+  Portfolio: PortfolioRecord;
+  Users: UsersRecord;
 };
 
 const DatabaseClient = buildClient();

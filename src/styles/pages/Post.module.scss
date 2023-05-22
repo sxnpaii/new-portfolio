@@ -1,0 +1,25 @@
+.Main {
+  @apply sm:w-[85%] mx-auto;
+  .Heading {
+    @apply mt-32 mb-16;
+    .HeadingText {
+      @apply text-5xl mb-5;
+    }
+  }
+  .Body{
+    .Img{
+      @apply mb-8;
+    }
+    .Content{
+      @apply mb-16;
+    }
+    .Tags{
+      .Hint{
+        @apply text-xl;
+      }
+      .Tag{
+        @apply mx-3 hover:underline;
+      }
+    }
+  }
+}

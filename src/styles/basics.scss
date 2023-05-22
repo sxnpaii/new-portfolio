@@ -2,11 +2,11 @@
 
 // basic styles for project
 .flexbox {
-  @apply flex flex-wrap;
+  @apply flex flex-wrap ;
 }
 
 .basic-text {
-  @apply font-normal;
+  @apply font-normal text-white ;
   font-family: 'Inter', sans-serif;
 }
 
@@ -15,5 +15,8 @@
   font-family: 'Playfair Display', serif;
 }
 .btn{
-  @apply basic-text px-4 py-2 backdrop-blur-2xl bg-[] text-[#fff] hover:bg-white hover:text-[#252525] rounded border transition;
+  @apply basic-text px-4 py-2 backdrop-blur-2xl text-[#fff] hover:bg-white hover:text-[#252525] border transition;
+}
+.btn-primary{
+  @apply heading-text p-4 backdrop-blur-2xl text-[#fff] hover:bg-white hover:text-[#252525] border transition;
 }

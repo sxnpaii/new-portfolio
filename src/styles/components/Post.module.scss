@@ -1,0 +1,33 @@
+.Post {
+  @apply overflow-hidden mb-5 transition bg-[#18181880] ;
+  .PostBody {
+    @apply px-5 pt-3 pb-6;
+    .PostHeading {
+      @apply justify-between items-center ;
+      .PostTitle {
+        @apply mb-2 capitalize text-2xl
+      }
+
+      .PostDate {
+        @apply text-sm;
+      }
+    }
+
+    .PostDescription {
+      @apply opacity-50 mb-8
+    }
+  }
+
+  .PostFooter {
+    @apply items-center justify-between;
+    .PostLink {
+      @apply text-sm;
+    }
+
+    .Tags {
+      .PostTag {
+        @apply text-sm hover:underline;
+      }
+    }
+  }
+}

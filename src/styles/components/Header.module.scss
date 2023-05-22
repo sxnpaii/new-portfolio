@@ -1,12 +1,31 @@
-.wrapping {
-  @apply sm:flex-row flex-col justify-between;
-}
-.logo {
-  @apply sm:m-0 w-full sm:w-auto;
-}
-header.params {
-@apply min-h-[70px] sm:items-center justify-between p-5 transition-all bg-[#2525259f] backdrop-blur-2xl z-50;
-  .ListItem {
-    @apply py-2 px-3 hover:bg-white hover:text-[#252525] rounded transition uppercase text-sm;
+.Header {
+  @apply min-h-[70px] sm:items-center justify-between p-5 bg-[#2525259f] backdrop-blur-2xl z-10;
+  .logo {
+    @apply sm:m-0 w-full sm:w-auto;
+    .Brand {
+      @apply text-2xl sm:m-0
+    }
+  }
+
+  .Ul {
+    @apply sm:flex-row flex-col justify-between gap-5 sm:m-0;
+    @media (max-width: 640px) {
+      transition: all 330ms ;
+      height: 0;
+      overflow: hidden;
+    }
+    .ListItem {
+      @apply py-2 px-3 text-white hover:bg-white hover:text-[#252525] rounded transition uppercase text-sm;
+    }
+  }
+.active {
+    transition: all 330ms;
+  @media (max-width: 640px) {
+    display: flex;
+    margin-top: 2em;
+    height:230px ;
   }
 }
+}
+
+

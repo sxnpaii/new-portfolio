@@ -5,7 +5,7 @@ const About = () => {
         <section data-scroll className={`${sass.About} mt-32 h-auto`}>
             <h2
                 className={`${sass.Heading} heading-text `}
-                data-scroll data-scroll-speed="-1.5"
+                data-scroll data-scroll-speed="1.5"
             >
                 Обо мне
             </h2>
@@ -14,7 +14,7 @@ const About = () => {
                 <div
                     className={`${sass.Text} `}
                     data-scroll
-                    data-scroll-speed="3"
+                    data-scroll-speed="1"
                 >
                     <p className={`basic-text mb-10`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
                         cupiditate, eaque fugiat harum illo ipsam, ipsum nobis omnis perferendis porro provident quaerat
@@ -34,6 +34,7 @@ const About = () => {
                     src="/About.png"
                     className={`${sass.img}`}
                     data-scroll
+                    data-scroll-speed="2"
                 />
             </div>
         </section>

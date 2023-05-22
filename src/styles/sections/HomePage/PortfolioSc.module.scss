@@ -5,13 +5,30 @@
   }
 
   .Block {
-    @apply columns-3 cursor-pointer;
+    @apply md:columns-3 columns-1 cursor-pointer;
     .Work {
-      @apply relative transition overflow-hidden my-5;
-      .hovered {
-        @apply absolute top-0 opacity-0 w-full h-full;
-        transition: all 330ms;
+      @apply relative transition overflow-hidden my-3 rounded-xl;
+      img {
+        @apply w-full rounded;
       }
+
+      .hovered {
+        @apply absolute top-0 opacity-0 w-full h-full px-[15px] py-[20px] md:px-[30px] md:py-[50px] md:overflow-hidden overflow-y-scroll;
+        transition: all 330ms;
+
+        h4 {
+          @apply text-3xl mb-5
+        }
+
+        p {
+          @apply text-[13px] mb-10
+        }
+
+        .btns {
+          @apply gap-3;
+        }
+      }
+
       &:hover .hovered {
         @apply opacity-100;
         background: rgba(0, 0, 0, .5);

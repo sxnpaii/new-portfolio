@@ -1,36 +1,44 @@
 // react next modules
 import Head from 'next/head'
 import Image from 'next/image';
-import {useRef} from "react";
+import {useRef, useState} from "react";
 import {useRouter} from 'next/router';
+//xata
+import {getXataClient, Portfolio, Posts} from "@/new-portfolio/xata";
 // loco scroll animations
 import {LocomotiveScrollProvider} from 'react-locomotive-scroll';
 //components
 import MainLayout from "@/new-portfolio/components/MainLayout";
-// styles
+import Footer from "@/new-portfolio/components/Footer"
 // sections
 import Hero from '../sections/HomePage/Hero';
 import About from "@/new-portfolio/sections/HomePage/About";
-import Portfolio from "@/new-portfolio/sections/HomePage/Portfolio";
-import {getXataClient, portfolio, Posts} from "@/new-portfolio/xata";
-
-//portfolio data from xata db
+import PortfolioSc from "@/new-portfolio/sections/HomePage/Portfolio";
+import RandomPosts from "@/new-portfolio/sections/HomePage/RandomPosts";
+// data from xata db
 export const getServerSideProps = async () => {
-    const xata = await getXataClient();
-    const records: portfolio[] = await xata.db.portfolio.getMany();
-
+    const xata = getXataClient();
+    const records: Portfolio[] = await xata.db.Portfolio.getAll();
+    const posts: Posts[] = await xata.db.Posts.getMany({
+        pagination: {size: 3},
+    });
     return {
         props: {
             records: records.map((record) => ({
                 ...record,
                 project: record.project?.toString(),
             })),
+            posts:
+                posts.map((post) => ({
+                    ...post,
+                    published_date: post.published_date?.toDateString()
+                }))
         },
     }
 }
-export default function Home({records}: portfolio[]) {
+export default function Home({records, posts}: { records: Portfolio[], posts: Posts[] }): JSX.Element {
     const {asPath} = useRouter()
-    const containerRef = useRef(null)
+    const containerRef = useRef()
     return (
         <LocomotiveScrollProvider
             options={{
@@ -42,9 +50,10 @@ export default function Home({records}: portfolio[]) {
                     smooth: true
                 }
             }}
-            location={asPath}
+
+            // location={asPath}
             containerRef={containerRef}
-            // watch={[]}
+            watch={asPath}
         >
             <Head>
                 <title>SXNPAII's Universe 🌌</title>
@@ -52,11 +61,13 @@ export default function Home({records}: portfolio[]) {
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/personal/logo.svg"/>
             </Head>
-            <main className=' text-white' ref={containerRef}>
+            <main ref={containerRef}>
                 <MainLayout>
                     <Hero/>
                     <About/>
-                    <Portfolio records={records}/>
+                    <PortfolioSc records={records}/>
+                    <RandomPosts posts={posts}/>
+                    <Footer/>
                 </MainLayout>
             </main>
         </LocomotiveScrollProvider>

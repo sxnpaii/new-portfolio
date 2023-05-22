@@ -1,0 +1,15 @@
+.Head{
+  @apply mt-32 mb-12;
+  .Heading{
+    @apply text-6xl mb-5;
+  }
+  .Description{
+    @apply sm:w-1/2 opacity-70;
+  }
+}
+.Tags{
+  @apply columns-2 lg:columns-3;
+  .Tag{
+    @apply text-xl sm:text-4xl sm:mx-1 mb-3 hover:underline inline-block
+  }
+}

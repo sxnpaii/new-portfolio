@@ -1,3 +1,4 @@
+import Link from "next/link";
 // styles
 import sass from "@/new-portfolio/styles/sections/HomePage/Hero.module.scss";
 
@@ -37,7 +38,7 @@ const Hero = () => {
                     <br/>
                     Мир!
                 </h1>
-                <button className={`${sass.Btn} btn`}>Ну привет..</button>
+                <Link href={`/about`} className={`${sass.Btn} inline-block btn`}>Ну привет..</Link>
             </div>
         </section>
     );

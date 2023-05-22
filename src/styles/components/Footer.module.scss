@@ -1,0 +1,16 @@
+.Footer {
+  @apply w-full mt-20 pb-8 text-center justify-between;
+  .line {
+    @apply border mx-auto mb-8 w-[910%]
+  }
+
+  .Socials {
+    .logo {
+      @apply max-w-[23px] inline mx-2 transition hover:opacity-70
+    }
+  }
+
+  .Heading {
+    @apply text-lg font-medium my-3
+  }
+}
