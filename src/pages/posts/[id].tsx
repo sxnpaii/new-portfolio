@@ -8,6 +8,7 @@ import MainLayout from "@/new-portfolio/components/MainLayout";
 import Md from "@/new-portfolio/components/Md";
 //styles
 import sass from "@/new-portfolio/styles/pages/Post.module.scss";
+import PageTitle from "@/new-portfolio/components/PageTitle";
 //data fetching
 export const getServerSideProps = async ({ params }) => {
     const xata = getXataClient();
@@ -17,7 +18,6 @@ export const getServerSideProps = async ({ params }) => {
         ...post,
         published_date: post.published_date?.toDateString()
     }
-    console.log(post);
     return {
         props: {
             content: {
@@ -36,10 +36,8 @@ const Post = ({ content }: { content: Posts[] }): JSX.Element => {
                 <title>{content.title} || SXNPAII`s Universe </title>
             </Head>
             <main className={` ${sass.Main} `}>
-                <div className={`${sass.Heading} `}>
-                    <h2 className={` ${sass.HeadingText} heading-text `}>{content.title}</h2>
-                    <p className={`basic-text`}>{content.description}</p>
-                </div>
+                <PageTitle title={content.title} description={content.description}/>
+                {/*body*/}
                 <div className={`${sass.Body}`}>
                     <img
                         src={content.img_cover_url}

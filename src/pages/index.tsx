@@ -56,10 +56,11 @@ export default function Home({records, posts}: { records: Portfolio[], posts: Po
             watch={asPath}
         >
             <Head>
-                <title>SXNPAII's Universe 🌌</title>
-                <meta name="description" content=""/>
                 <meta name="viewport" content="width=device-width, initial-scale=1"/>
                 <link rel="icon" href="/personal/logo.svg"/>
+                <title>SXNPAII's Universe 🌌</title>
+                <meta property="og:title" content="SXNPAII's Universe 🌌"/>
+                <meta property="og:description" content="Порфолио и Блог Front-end разработчика под ником SXNPAII"/>
             </Head>
             <main ref={containerRef}>
                 <MainLayout>

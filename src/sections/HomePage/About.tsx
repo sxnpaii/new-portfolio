@@ -1,4 +1,5 @@
 import sass from "@/new-portfolio/styles/sections/HomePage/About.module.scss";
+import Link from "next/link";
 
 const About = () => {
     return (
@@ -27,7 +28,7 @@ const About = () => {
                         praesentium repellendus soluta voluptate voluptatem! Dolores quam quas recusandae sit velit
                         voluptatum? Amet dolore esse exercitationem fugit inventore ipsum iste itaque necessitatibus
                         nesciunt obcaecati optio quaerat, sequi, suscipit ut voluptatem.</p>
-                    <button className={`${sass.Btn} btn`}>Резюме</button>
+                    <Link href={`/about`} className={`${sass.Btn} btn`}>Обо мне</Link>
                 </div>
 
                 <img

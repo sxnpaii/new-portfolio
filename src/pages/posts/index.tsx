@@ -6,6 +6,7 @@ import {useState} from "react";
 import {getXataClient, Posts} from "@/new-portfolio/xata";
 //components
 import MainLayout from "@/new-portfolio/components/MainLayout";
+import PageTitle from "@/new-portfolio/components/PageTitle";
 //sections
 import Post from "@/new-portfolio/components/Post";
 //styles
@@ -34,23 +35,27 @@ export const getServerSideProps = async () => {
 const Posts = ({records}: { records: Posts[] }): JSX.Element => {
     return (
         <MainLayout>
-            <div className={sass.Head}>
-                <h2 className={` ${sass.Heading} heading-text`}>Посты</h2>
-                <p className={`${sass.Description} basic-text`}>Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Amet culpa eaque eveniet facilis magni nesciunt nostrum, omnis perferendis quibusdam suscipit.
-                    Nam, qui reprehenderit?</p>
-            </div>
-            <div className={`${sass.Posts}`}>
-                {records.map((post) => (
-                    <Post key={post.id} post={post}/>
-                ))}
+            <PageTitle
+                title={`Посты`}
+                description={`Lorem ipsum dolor sit amet, consectetur adipisicing
+              elit. Amet culpa eaque eveniet facilis magni nesciunt nostrum, omnis perferendis quibusdam suscipit.
+                   Nam, qui reprehenderit?`}/>
+            {/* body */}
+            <div className={records !=  0 ? `${sass.Posts}` : ''}>
+                {records !=  0
+                    ?
+                    records.map((post) => (
+                        <Post key={post.id} post={post}/>
+                    ))
+                    :
+                    <p className={`${sass.Error} basic-text`}>Автор ещё не успел писать что-то интереснее ))</p>}
             </div>
             <div className={`${sass.Footer} flexbox`}>
-                <button
-                    className={`${sass.btn} btn`}
+                <a href={`https://medium.com/@sxnpaii`}
+                    className={`${sass.btn} btn flexbox gap-3`}
                 >
-                    More
-                </button>
+                    Больше постов в <img src="/icons/medium.svg" width={25} height={25} alt=""/>
+                </a>
             </div>
 
         </MainLayout>

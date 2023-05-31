@@ -1,7 +1,10 @@
 import {getXataClient, Posts} from "@/new-portfolio/xata";
 // components
 import MainLayout from "@/new-portfolio/components/MainLayout";
+import PageTitle from "@/new-portfolio/components/PageTitle";
 import Post from "@/new-portfolio/components/Post";
+//styles
+import sass from "@/new-portfolio/styles/pages/Tag.module.scss";
 
 export const getServerSideProps = async ({query}) => {
     const xata = getXataClient();
@@ -21,18 +24,16 @@ export const getServerSideProps = async ({query}) => {
 const Tag = ({query, PostsWithTags}: { query: {}, PostsWithTags: Posts[] }): JSX.Element => {
     return (
         <MainLayout>
-            <div className="Text mb-12">
-                <h3 className={`heading-text text-5xl mt-32 mb-8`}>
-                    По тегу "{query.tags}" найдены {PostsWithTags.map(post => post.tags).length} посты
-                </h3>
-                <p className={`basic-text`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis delectus deserunt dolorum eaque eius, enim ex, harum optio perferendis porro quibusdam, rerum? Commodi consectetur doloremque maxime, obcaecati quam rem repellendus.</p>
+            <PageTitle
+                title={`По тегу "${query.tags}" найдены ${PostsWithTags.map(post => post.tags).length} посты`}
+
+            />
+            {/*body*/}
+            <div className={`${sass.Posts}`}>
+                {PostsWithTags.map((post) => (
+                    <Post key={post.id} post={post}/>
+                ))}
             </div>
-            <div className="Tags columns-2 md:columns-3">
-            {PostsWithTags.map((post) => (
-                <Post key={post.id} post={post}/>
-            ))}
-            </div>
-            {/*{console.log(PostsWithTags)}*/}
         </MainLayout>
     )
 

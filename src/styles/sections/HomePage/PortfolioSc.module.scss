@@ -5,7 +5,7 @@
   }
 
   .Block {
-    @apply md:columns-3 columns-1 cursor-pointer;
+    @apply lg:columns-3 sm:columns-2 columns-1 cursor-pointer;
     .Work {
       @apply relative transition overflow-hidden my-3 rounded-xl;
       img {

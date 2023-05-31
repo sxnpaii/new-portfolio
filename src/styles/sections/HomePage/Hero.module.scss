@@ -5,7 +5,7 @@
         @apply relative min-h-[600px] sm:min-h-[1000px] mt-10 sm:mt-0 ;
 
         .quote {
-            @apply sm:w-[55%] w-[90%] sm:text-base text-[13px] max-[680px]:absolute max-[680px]:top-[0%] z-30;
+            @apply sm:w-[55%] xl:w-[40%] w-[90%] sm:text-base text-[13px] max-[680px]:absolute max-[680px]:top-[0%] z-30;
         }
 
         .img {

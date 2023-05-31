@@ -10,8 +10,8 @@ const Hero = () => {
                     className={`${sass.quote} basic-text`}
                     data-scroll
                 data-scroll-speed="-1"
-                >Привет посетитель! Я Абдулхаев Хуршид то есть чел под
-                    ником Sxnpaii, и я разработчик клиентских веб-интерфейсов.. </h6>
+                >Привет посетитель! Я Абдулхаев Хуршид, чел под
+                    ником Sxnpaii, и я Front-End разработчик... </h6>
                 <img
                     src="/Rectangle 19.png"
                     alt=""

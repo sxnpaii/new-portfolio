@@ -1,9 +1,9 @@
 .Post {
-  @apply overflow-hidden mb-5 transition bg-[#18181880] ;
+  @apply w-full overflow-hidden mb-5 transition bg-[#18181880] ;
   .PostBody {
     @apply px-5 pt-3 pb-6;
     .PostHeading {
-      @apply justify-between items-center ;
+      @apply justify-between items-center flex-wrap-reverse gap-x-3 ;
       .PostTitle {
         @apply mb-2 capitalize text-2xl
       }
@@ -19,7 +19,7 @@
   }
 
   .PostFooter {
-    @apply items-center justify-between;
+    @apply items-center justify-between gap-x-3 gap-y-5 ;
     .PostLink {
       @apply text-sm;
     }

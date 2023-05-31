@@ -1,0 +1,49 @@
+.Form {
+    @apply flex-col px-2 mb-24 ;
+
+    &>*:not(button, i, div) {
+        @apply my-3 bg-[#00000020] border;
+    }
+
+    *::placeholder,
+    *:focus-visible {
+        @apply opacity-80 outline-none;
+    }
+
+    .HeadEls {
+        @apply w-full justify-center gap-3 sm:flex-nowrap ;
+        & * {
+            @apply inline-block w-full sm:w-1/2 bg-[#00000020] border
+        }
+
+
+        .Title {
+            @apply p-3 font-normal
+        }
+
+        .Description {
+            @apply p-3
+        }
+    }
+
+    .ImageUrl {
+        @apply p-3;
+
+    }
+
+    .Content {
+        @apply p-3 min-h-[100px];
+
+    }
+
+    .Tags {
+        @apply w-1/3 p-3;
+    }
+
+    .Btn {
+        @apply py-5 mt-5
+    }
+    .Hint{
+        @apply text-[14px] opacity-60
+    }
+}

@@ -1,11 +1,5 @@
 .Main {
   @apply sm:w-[85%] mx-auto;
-  .Heading {
-    @apply mt-32 mb-16;
-    .HeadingText {
-      @apply text-5xl mb-5;
-    }
-  }
   .Body{
     .Img{
       @apply mb-8;
