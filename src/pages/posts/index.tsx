@@ -1,5 +1,6 @@
 //react & next modules/hooks/components
 import Link from "next/link";
+import Head from "next/head";
 // import {useRouter} from "next/router";
 import {useState} from "react";
 //xata
@@ -35,6 +36,11 @@ export const getServerSideProps = async () => {
 const Posts = ({records}: { records: Posts[] }): JSX.Element => {
     return (
         <MainLayout>
+            <Head>
+                <title>Все Посты || SXNPAII's Universe 🌌</title>
+                <meta property="og:title" content="Все Посты || SXNPAII's Universe 🌌"/>
+                <meta property="og:description" content="Порфолио и Блог Front-end разработчика под ником SXNPAII"/>
+            </Head>
             <PageTitle
                 title={`Посты`}
                 description={`Lorem ipsum dolor sit amet, consectetur adipisicing

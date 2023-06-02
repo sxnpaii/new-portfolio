@@ -5,6 +5,7 @@ import PageTitle from "@/new-portfolio/components/PageTitle";
 import Post from "@/new-portfolio/components/Post";
 //styles
 import sass from "@/new-portfolio/styles/pages/Tag.module.scss";
+import Head from "next/head";
 
 export const getServerSideProps = async ({query}) => {
     const xata = getXataClient();
@@ -24,9 +25,11 @@ export const getServerSideProps = async ({query}) => {
 const Tag = ({query, PostsWithTags}: { query: {}, PostsWithTags: Posts[] }): JSX.Element => {
     return (
         <MainLayout>
+            <Head>
+                <title>Посты по тегу {query.tags} || SXNPAII's Universe 🌌</title>
+            </Head>
             <PageTitle
                 title={`По тегу "${query.tags}" найдены ${PostsWithTags.map(post => post.tags).length} посты`}
-
             />
             {/*body*/}
             <div className={`${sass.Posts}`}>

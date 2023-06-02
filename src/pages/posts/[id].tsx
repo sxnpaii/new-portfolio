@@ -12,8 +12,12 @@ import PageTitle from "@/new-portfolio/components/PageTitle";
 //data fetching
 export const getServerSideProps = async ({ params }) => {
     const xata = getXataClient();
-    const post: Posts[] = await xata.db.Posts.read(`${params.id}`)as Posts;
-
+    const post: Posts[] = await xata.db.Posts.read(`${params.id}`) as Posts;
+if (!post){
+    return {
+        notFound: true
+    }
+}
     const content = {
         ...post,
         published_date: post.published_date?.toDateString()
@@ -34,8 +38,10 @@ const Post = ({ content }: { content: Posts[] }): JSX.Element => {
         <MainLayout>
             <Head>
                 <title>{content.title} || SXNPAII`s Universe </title>
+                <meta property="og:title" content={`${content.title}`}/>
+                <meta property="og:image" content={`${content.img_cover_url}`}/>
             </Head>
-            <main className={` ${sass.Main} `}>
+            <main className={` ${sass.Main}`}>
                 <PageTitle title={content.title} description={content.description}/>
                 {/*body*/}
                 <div className={`${sass.Body}`}>

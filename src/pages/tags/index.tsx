@@ -5,6 +5,7 @@ import MainLayout from "@/new-portfolio/components/MainLayout";
 import PageTitle from "@/new-portfolio/components/PageTitle";
 //styles
 import sass from "@/new-portfolio/styles/pages/Tags.module.scss";
+import Head from "next/head";
 
 export const getServerSideProps = async () => {
     const xata = getXataClient()
@@ -19,6 +20,9 @@ export const getServerSideProps = async () => {
 const Tags = ({posts}: { posts: Posts[] }) => {
     return (
         <MainLayout>
+            <Head>
+                <title>Все теги || SXNPAII's Universe 🌌</title>
+            </Head>
             <PageTitle title={`Теги`}/>
             {/*body*/}
             <ul className={posts != 0 ? `${sass.Tags} ` : ""}>
