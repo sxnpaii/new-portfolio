@@ -1,8 +1,7 @@
-
 import Link from "next/link";
 import sass from "@/new-portfolio/styles/components/Post.module.scss";
 
-const Post = ({post}): JSX.Element => {
+const Post = ({post, editable= false, funcs, states}): JSX.Element => {
 
     return (
         <div className={`${sass.Post}`}>
@@ -11,11 +10,20 @@ const Post = ({post}): JSX.Element => {
             </Link>
             <div className={`${sass.PostBody}`}>
                 <div className={`${sass.PostHeading} flexbox`}>
-                    <h3 className={`${sass.PostTitle} heading-text`}>{post.title}</h3>
+                    <h3 className={`${sass.PostTitle} heading-text flexbox `}>
+                    <div className={editable ? "flexbox gap-5" : "hidden"}>
+                        <button
+                        onClick={()=> {
+                            states.setModal(true),
+                                funcs.remove(post)
+                        }}
+                        >
+                            <img src="/icons/delete.svg" alt="" width={20}/>
+                        </button>
+                    </div>
+                        {post.title}
+                    </h3>
                     <p className={`${sass.PostDate} basic-text`}>{post.published_date}</p>
-                    {/*<div className="icons">*/}
-
-                    {/*</div>*/}
                 </div>
                 <p className={`${sass.PostDescription} basic-text`}>{post.description}</p>
                 <div className={`${sass.PostFooter} flexbox`}>

@@ -1,7 +1,8 @@
 .Tags {
-  @apply columns-2 lg:columns-3;
+  @apply sm:columns-2 lg:columns-3;
+  padding-inline: 0;
   .Tag {
-    @apply text-xl sm:text-4xl sm:mx-1 mb-3 hover:underline inline-block
+    @apply text-xl lg:text-3xl sm:mx-1 mb-3 hover:underline inline-block
   }
 }
 

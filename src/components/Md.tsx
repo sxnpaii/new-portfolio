@@ -9,5 +9,9 @@ function renderMarkdownToHTML(markdown?: string) {
 
 export default function Md({ markdown, className }: { markdown?: string, className?: string }) {
     const markup = renderMarkdownToHTML(markdown);
-    return <div dangerouslySetInnerHTML={markup} className={className} />;
+    return (
+        <>
+        <div dangerouslySetInnerHTML={markup} className={className} />
+        </>
+    )
 }

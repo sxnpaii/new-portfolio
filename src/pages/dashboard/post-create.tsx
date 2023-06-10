@@ -13,7 +13,7 @@ import MainLayout from "@/new-portfolio/components/MainLayout";
 import PageTitle from "@/new-portfolio/components/PageTitle";
 import Post from "@/new-portfolio/components/Post";
 // sections
-import PostForm from "../sections/DashboardPage/PostForm";
+import PostForm from "../../sections/DashboardPage/PostForm";
 //styles
 import sass from "@/new-portfolio/styles/pages/Dashboard.module.scss";
 import Modal from "@/new-portfolio/components/Modal";
@@ -35,7 +35,7 @@ export const getServerSideProps = async () => {
 
 }
 
-const Dashboard = ({posts}: { posts: Posts[] }): JSX.Element => {
+const PostCreate = ({posts}: { posts: Posts[] }): JSX.Element => {
     //MODAL STATE
     const [modal, setModal] = useState(false);
     const [newPost, setNewPost] = useState({
@@ -58,20 +58,14 @@ const Dashboard = ({posts}: { posts: Posts[] }): JSX.Element => {
             img_cover_url: newPost.img_cover_url,
             tags: newPost.tags.split(" "),
         })
+        //modal false
         setModal(false)
-        // console.log(jsonForm)
     }
-
     return (
         <MainLayout>
-            <PageTitle title={`Панель Управления`} description={`lorem20`}/>
+            <PageTitle title={`Создание Постов`} description={`lorem20`}/>
             {/* body */}
             <PostForm states={{newPost, setNewPost, setModal}}/>
-            <div className="AllPosts columns-3">
-                {posts.map(post => (
-                    <Post key={post.id} post={post}/>
-                ))}
-            </div>
             <Modal
                 states={{modal, setModal}}
                 func={insert}
@@ -79,4 +73,4 @@ const Dashboard = ({posts}: { posts: Posts[] }): JSX.Element => {
         </MainLayout>
     )
 }
-export default Dashboard;
+export default PostCreate;

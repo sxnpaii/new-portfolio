@@ -8,6 +8,7 @@
       @apply mb-16;
     }
     .Tags{
+      @apply border-t pt-5;
       .Hint{
         @apply text-xl;
       }
