@@ -1,0 +1,9 @@
+.Div{
+    @apply text-sm text-center p-3 z-50 bg-black fixed bottom-0 left-0 w-full flex justify-center items-center gap-8 ;
+    .Close{
+        @apply cursor-pointer inline-block;
+    }
+}
+.active{
+    display: none;
+}

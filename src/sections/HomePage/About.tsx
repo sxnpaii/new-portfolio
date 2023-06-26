@@ -5,7 +5,7 @@ const About = () => {
     return (
         <section data-scroll className={`${sass.About} mt-32 h-auto`}>
             <h2
-                className={`${sass.Heading} heading-text `}
+                className={`${sass.Heading} heading-text`}
                 data-scroll data-scroll-speed="1.5"
             >
                 Обо мне
