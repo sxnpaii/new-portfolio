@@ -1,5 +1,12 @@
-import sass from "@/new-portfolio/styles/sections/HomePage/About.module.scss";
+
 import Link from "next/link";
+//components
+import Md from "@/new-portfolio/components/Md";
+//styles
+import sass from "@/new-portfolio/styles/sections/HomePage/About.module.scss";
+import {styles} from "@/new-portfolio/styles/Basics"
+// utils
+import {AboutPageMdContent} from "@/new-portfolio/utils";
 
 const About = () => {
     return (
@@ -17,18 +24,8 @@ const About = () => {
                     data-scroll
                     data-scroll-speed="1"
                 >
-                    <p className={`basic-text mb-10`}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias
-                        cupiditate, eaque fugiat harum illo ipsam, ipsum nobis omnis perferendis porro provident quaerat
-                        sit tenetur ullam voluptatum? Debitis, dolore, eos? Ab amet deleniti dolores, libero magni natus
-                        nesciunt officiis quae, quod sit suscipit temporibus ullam voluptatum! Animi debitis deleniti
-                        dolor eius eligendi fuga, illo molestiae perspiciatis rem rerum? Ab ad alias dolor doloribus ex
-                        exercitationem, ipsa labore maiores nobis non placeat, praesentium quidem, sunt. Animi eligendi
-                        fugit laborum laudantium modi odit placeat provident ratione ut velit? Ab consequuntur deleniti,
-                        ducimus eligendi eveniet fuga ipsum libero magnam molestias nostrum, nulla odit omnis,
-                        praesentium repellendus soluta voluptate voluptatem! Dolores quam quas recusandae sit velit
-                        voluptatum? Amet dolore esse exercitationem fugit inventore ipsum iste itaque necessitatibus
-                        nesciunt obcaecati optio quaerat, sequi, suscipit ut voluptatem.</p>
-                    <Link href={`/about`} className={`${sass.Btn} btn`}>Обо мне</Link>
+                    <Md className={`basic-text mb-10`} markdown={AboutPageMdContent.substring(0, 700)}/>
+                    <Link href={`/about`} className={`${sass.Btn} btn`}>Продолжение..</Link>
                 </div>
 
                 <img
@@ -38,6 +35,7 @@ const About = () => {
                     data-scroll-speed="2"
                 />
             </div>
+            <style jsx>{styles}</style>
         </section>
     )
 }

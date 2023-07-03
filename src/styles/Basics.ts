@@ -67,6 +67,7 @@ code {
 ol {
   list-style-type: decimal;
 }
+
 blockquote {
   display: block;
   margin-block-start: 1em;
@@ -101,4 +102,17 @@ th, td {
   // display: block;
   padding: 5px;
   border-right: 1px solid white;
-}`
+}
+hr {
+    display: block;
+    color: gray;
+    border-style: inset;
+    border-width: 1px;
+    margin-block-start: 0.5em;
+    margin-block-end: 0.5em;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    margin: 20px 0;
+    overflow: hidden;
+}
+`
