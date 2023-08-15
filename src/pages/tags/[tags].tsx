@@ -1,4 +1,4 @@
-import {getXataClient, Posts} from "@/new-portfolio/xata";
+import {XataClient, Posts} from "@/new-portfolio/xata";
 // components
 import MainLayout from "@/new-portfolio/components/MainLayout";
 import PageTitle from "@/new-portfolio/components/PageTitle";
@@ -8,7 +8,9 @@ import sass from "@/new-portfolio/styles/pages/Tag.module.scss";
 import Head from "next/head";
 
 export const getServerSideProps = async ({query}) => {
-    const xata = getXataClient();
+    const xata = new XataClient({
+        apiKey: process.env.NEXT_PUBLIC_API_KEY
+    });
     const PostsWithTags: Posts[] = await xata.db.Posts.filter({tags: `${query.tags}`}).getAll()
 
     return {

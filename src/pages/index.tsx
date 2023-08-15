@@ -4,7 +4,7 @@ import Image from 'next/image';
 import {useRef, useState} from "react";
 import {useRouter} from 'next/router';
 //xata
-import {getXataClient, Portfolio, Posts} from "@/new-portfolio/xata";
+import {XataClient, Portfolio, Posts} from "@/new-portfolio/xata";
 // loco scroll animations
 import {LocomotiveScrollProvider} from 'react-locomotive-scroll';
 //components
@@ -17,7 +17,9 @@ import PortfolioSc from "@/new-portfolio/sections/HomePage/Portfolio";
 import RandomPosts from "@/new-portfolio/sections/HomePage/RandomPosts";
 // data from xata db
 export const getServerSideProps = async () => {
-    const xata = getXataClient();
+    const xata = new XataClient({
+        apiKey: process.env.NEXT_PUBLIC_API_KEY
+    });
     const records: Portfolio[] = await xata.db.Portfolio.getAll();
     const posts: Posts[] = await xata.db.Posts.getMany({
         pagination: {size: 3},

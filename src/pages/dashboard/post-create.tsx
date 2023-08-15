@@ -2,10 +2,10 @@
 import {useState} from "react";
 
 //xata
-import {getXataClient, Posts, XataClient} from "@/new-portfolio/xata";
+import { Posts, XataClient} from "@/new-portfolio/xata";
 
 const xata = new XataClient({
-    apiKey: "xau_6ERkGTFFVkgmdJ9OusDimEDrgrvcNqvm2",
+    apiKey: process.env.NEXT_PUBLIC_API_KEY,
     enableBrowser: true
 })
 //components

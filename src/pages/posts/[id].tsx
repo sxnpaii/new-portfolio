@@ -2,7 +2,7 @@
 import Head from "next/head";
 import Link from "next/link";
 //xata
-import {getXataClient, Posts} from "@/new-portfolio/xata";
+import {XataClient, Posts} from "@/new-portfolio/xata";
 //components
 import MainLayout from "@/new-portfolio/components/MainLayout";
 import Md from "@/new-portfolio/components/Md";
@@ -12,7 +12,9 @@ import sass from "@/new-portfolio/styles/pages/Post.module.scss";
 import {styles} from "@/new-portfolio/styles/Basics";
 //data fetching
 export const getServerSideProps = async ({params}) => {
-    const xata = getXataClient();
+    const xata = new XataClient({
+        apiKey: process.env.NEXT_PUBLIC_API_KEY
+    });
     const post: Posts[] = await xata.db.Posts.read(`${params.id}`);
     if (!post) {
         return {

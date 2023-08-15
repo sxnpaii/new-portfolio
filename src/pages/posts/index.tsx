@@ -1,10 +1,8 @@
 //react & next modules/hooks/components
 import Link from "next/link";
 import Head from "next/head";
-// import {useRouter} from "next/router";
-import {useState} from "react";
 //xata
-import {getXataClient, Posts} from "@/new-portfolio/xata";
+import {XataClient, Posts} from "@/new-portfolio/xata";
 //components
 import MainLayout from "@/new-portfolio/components/MainLayout";
 import PageTitle from "@/new-portfolio/components/PageTitle";
@@ -15,7 +13,9 @@ import sass from "@/new-portfolio/styles/pages/Posts.module.scss";
 
 //receive data from xata
 export const getServerSideProps = async () => {
-    const xata = getXataClient();
+    const xata = new XataClient({
+        apiKey: process.env.NEXT_PUBLIC_API_KEY
+    });
     const records: Posts[] = await xata.db.Posts.getAll(
         // {pagination: {size: 10}}
     )
