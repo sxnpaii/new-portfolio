@@ -1,8 +1,8 @@
 .Main {
-  @apply sm:w-[85%] mx-auto;
+  @apply sm:w-[75%] mx-auto;
   .Body{
     .Img{
-      @apply mb-8;
+      @apply mx-auto mb-8;
     }
     .Content{
       @apply mb-16;
