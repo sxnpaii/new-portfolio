@@ -17,3 +17,45 @@ export const AboutPageMdContent: string = `
  Если всё ещё интересно пожайлуста [свяжитесь](/contact).
   
 `;
+export const contactsLinks = [
+    {
+        name: "Телеграм",
+        link: "https://t.me/khurshid_0625"
+    },
+    {
+        name: "Инстаграм",
+        link: "https://instagram.com/the_sxnpaii"
+    },
+    {
+        name: "Гитхаб",
+        link: "https://github.com/sxnpaii"
+    },
+    {
+        name: "Телетайп",
+        link: "https://teletype.in/@sxnpaii"
+    },
+    {
+        name: "Телеграф или же сам Телеграм",
+        link: "https://t.me/sxnpaii_blog"
+    },
+    {
+        name: "Медиум",
+        link: "https://medium.com/@sxnpaii"
+    },
+    {
+        name: "Твиттер (Икс)",
+        link: "https://twitter.com/the_sxnpaii"
+    },
+    {
+        name: "Dev.to",
+        link: "https://dev.to/sxnpaii"
+    },
+    {
+        name: "Daily dev",
+        link: "https://app.daily.dev/sxnpaii"
+    },
+    {
+        name: "GitLab",
+        link: "https://gitlab.com/sxnpaii"
+    }
+]

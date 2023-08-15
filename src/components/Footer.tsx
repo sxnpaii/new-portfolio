@@ -16,7 +16,7 @@ const Footer = (): JSX.Element => {
                     <img className={`${sass.logo}`} src="/icons/instagram.svg" alt=""/>
                 </a>
                 <a href="https://twitter.com/the_sxnpaii" target="_blank">
-                    <img className={`${sass.logo}`} src="/icons/twitter.svg" alt=""/>
+                    <img className={`${sass.logo}`} src="/icons/twitter-x.svg" alt=""/>
                 </a>
                 <a href="https://medium.com/@sxnpaii" target="_blank">
                     <img className={`${sass.logo}`} src="/icons/medium.svg" alt=""/>

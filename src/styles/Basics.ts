@@ -54,7 +54,7 @@ code {
   display: inline-block;
   font-family: monospace;
   background: #00000030;
-  padding: 10px 20px;
+  padding: 3px 5px;
   border-radius: 5px
 }
  ul,  ol {
