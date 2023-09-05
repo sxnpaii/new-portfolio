@@ -1,7 +1,7 @@
 .Contacts {
-    @apply  mx-auto justify-between gap-5 ;
+    @apply mx-auto justify-between gap-5;
     ul {
-        @apply max-w-[30%];
+        @apply md:max-w-[30%];
         h4 {
             @apply text-4xl mb-5
         }

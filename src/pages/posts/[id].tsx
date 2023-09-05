@@ -2,16 +2,16 @@
 import Head from "next/head";
 import Link from "next/link";
 //xata
-import {XataClient, Posts} from "@/new-portfolio/xata";
+import { XataClient, Posts } from "@/new-portfolio/xata";
 //components
 import MainLayout from "@/new-portfolio/components/MainLayout";
 import Md from "@/new-portfolio/components/Md";
 import PageTitle from "@/new-portfolio/components/PageTitle";
 //styles
 import sass from "@/new-portfolio/styles/pages/Post.module.scss";
-import {styles} from "@/new-portfolio/styles/Basics";
+import { styles } from "@/new-portfolio/styles/Basics";
 //data fetching
-export const getServerSideProps = async ({params}) => {
+export const getServerSideProps = async ({ params }) => {
     const xata = new XataClient({
         apiKey: process.env.NEXT_PUBLIC_API_KEY
     });
@@ -35,19 +35,19 @@ export const getServerSideProps = async ({params}) => {
     }
 }
 //ui
-const Post = ({content}: { content: Posts[] }): JSX.Element => {
+const Post = ({ content }: { content: Posts[] }): JSX.Element => {
 
     return (
         <MainLayout>
 
             <Head>
                 <title>{content.title} || SXNPAII`s Universe </title>
-                <meta property="og:title" content={`${content.title}`}/>
-                <meta property="og:image" content={`${content.img_cover_url}`}/>
+                <meta property="og:title" content={`${content.title}`} />
+                <meta property="og:image" content={`${content.img_cover_url}`} />
             </Head>
             <main className={` ${sass.Main}`}>
                 {/*<style scoped>{DefaultStyles}</style>*/}
-                <PageTitle title={content.title} description={content.description}/>
+                <PageTitle title={content.title} description={content.description} />
                 {/*body*/}
                 <div className={`${sass.Body}`}>
                     <img
@@ -61,13 +61,17 @@ const Post = ({content}: { content: Posts[] }): JSX.Element => {
                         className={` ${sass.Content} basic-text `}
 
                     />
-                    <div className={`${sass.Tags}`}>
-                        <b className={`heading-text ${sass.Hint}`}>
-                            Теги:
-                        </b>
-                        {content.tags.map(tag => (
-                            <Link href={`/tags/${tag}`} key={tag} className={`${sass.Tag} basic-text`}>#{tag}</Link>
-                        ))}
+                    {/* footer */}
+                    <div className={sass.Footer}>
+                        <div className={`${sass.Tags}`}>
+                            <b className={`heading-text ${sass.Hint}`}>
+                                Теги:
+                            </b>
+                            {content.tags.map(tag => (
+                                <Link href={`/tags/${tag}`} key={tag} className={`${sass.Tag} basic-text`}>#{tag}</Link>
+                            ))}
+                        </div>
+                        <b className="basic-text">{content.published_date}</b>
                     </div>
                 </div>
             </main>

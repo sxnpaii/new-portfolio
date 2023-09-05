@@ -1,19 +1,27 @@
 .Main {
   @apply sm:w-[70%] mx-auto;
-  .Body{
-    .Img{
+
+  .Body {
+    .Img {
       @apply mx-auto mb-8;
     }
-    .Content{
+
+    .Content {
       @apply mb-16;
     }
-    .Tags{
+
+    .Footer {
+      @apply flex items-center justify-between;
       @apply border-t pt-5;
-      .Hint{
-        @apply text-xl;
-      }
-      .Tag{
-        @apply mx-3 hover:underline;
+
+      .Tags {
+        .Hint {
+          @apply text-xl;
+        }
+
+        .Tag {
+          @apply mx-3 hover:underline;
+        }
       }
     }
   }

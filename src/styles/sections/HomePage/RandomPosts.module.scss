@@ -1,52 +1,40 @@
 .RandomPosts {
   @apply mt-32;
+
   .HeadingText {
-    @apply text-center ;
+    @apply text-center mb-16;
+
     .Heading {
       @apply text-6xl mb-8;
     }
 
     .Description {
-      @apply text-sm mb-10;
+      @apply text-sm ;
     }
   }
 
   .Posts {
-    @apply grid gap-5;
+    @apply gap-5;
+
     .Error {
       @apply opacity-70 text-center text-4xl my-24;
     }
 
     .Post {
-      @apply sm:flex flex-wrap md:flex-nowrap bg-[#18181880] backdrop-blur;
-      grid-column: 2 / 4;
-      @media (max-width: 1332px) {
-        grid-column: auto;
-      }
+      @apply sm:flex items-center flex-wrap md:flex-nowrap bg-[#18181880] backdrop-blur mb-10;
 
-      &:last-child {
-        @apply min-[1332px]:block ;
-        grid-column: 1 / 2;
-        grid-row: 3 / 1;
-        @media (max-width: 1332px) {
-          grid-column: auto;
-          grid-row: auto;
-        }
-      }
-
-      .Img {
-        //max-width: 100%;
+      .ImgLink {
         @apply w-full min-w-[250px] min-h-[260px];
-        &:last-child {
-          //@apply min-[1332px]:w-full;
-          //max-width: 100%;
+        .Img{
+          @apply w-full;
         }
       }
 
       .PostBody {
-        @apply p-[25px] w-full;
+        @apply p-[25px] md:ml-[65px] w-full;
+
         .PostTitle {
-          @apply text-5xl  mb-5
+          @apply text-5xl mb-5
         }
 
         .PostDescription {
@@ -55,12 +43,17 @@
 
         .PostFooter {
           @apply justify-between items-center;
+
           .Link {
             @apply text-base;
           }
 
-          .Tag {
-            @apply hover:underline mx-2
+          .TagsUl {
+            @apply list-none;
+
+            .Tag {
+              @apply hover:underline mx-2 no-underline
+            }
           }
         }
       }
@@ -68,6 +61,6 @@
   }
 
   .Btn {
-    @apply max-w-[150px] text-center block mx-auto mt-8
+    @apply max-w-[150px] text-center block mx-auto mt-8 no-underline
   }
 }

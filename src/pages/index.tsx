@@ -21,7 +21,7 @@ export const getServerSideProps = async () => {
         apiKey: process.env.NEXT_PUBLIC_API_KEY
     });
     const records: Portfolio[] = await xata.db.Portfolio.getAll();
-    const posts: Posts[] = await xata.db.Posts.getMany({
+    const posts: Posts[] = await xata.db.Posts.sort("published_date", "desc").getMany({
         pagination: {size: 3},
     });
     return {

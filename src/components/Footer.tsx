@@ -9,7 +9,7 @@ const Footer = (): JSX.Element => {
                 <a href="https://github.com/sxnpaii" target="_blank">
                     <img className={`${sass.logo}`} src="/icons/github.svg" alt=""/>
                 </a>
-                <a href="https://t.me/khurshid_0625" target="_blank">
+                <a href="https://t.me/sxnpaii" target="_blank">
                     <img className={`${sass.logo}`} src="/icons/telegram.svg" alt=""/>
                 </a>
                 <a href="https://instagram.com/the_sxnpaii" target="_blank">

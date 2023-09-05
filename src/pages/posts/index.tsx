@@ -43,11 +43,9 @@ const Posts = ({records}: { records: Posts[] }): JSX.Element => {
             </Head>
             <PageTitle
                 title={`Посты`}
-                description={`Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit. Amet culpa eaque eveniet facilis magni nesciunt nostrum, omnis perferendis quibusdam suscipit.
-                   Nam, qui reprehenderit?`}/>
+                description={`Здесь будет показано все посты, находящиеся на сайте, в котором написано с максимальной творческой силой`}/>
             {/* body */}
-            <div className={records !=  0 ? `${sass.Posts}` : ''}>
+            <div className={records != 0 ? `${sass.Posts}` : ""}>
                 {records !=  0
                     ?
                     records.map((post) => (

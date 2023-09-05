@@ -29,13 +29,13 @@ const About = () => {
                 </div>
 
                 <img
-                    src="/About.png"
+                    src="./personal/About.jpg"
                     className={`${sass.img}`}
                     data-scroll
                     data-scroll-speed="2"
                 />
             </div>
-            <style jsx>{styles}</style>
+            <style scoped jsx>{styles}</style>
         </section>
     )
 }
