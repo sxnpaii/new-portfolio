@@ -1,6 +1,6 @@
 
-import {useState} from "react";
-import {Posts, XataClient} from "@/new-portfolio/xata";
+import { useState } from "react";
+import { Posts, XataClient } from "@/new-portfolio/xata";
 //components
 import Post from "@/new-portfolio/components/Post";
 import Modal from "@/new-portfolio/components/Modal";
@@ -28,35 +28,35 @@ export const getServerSideProps = async () => {
 
 }
 
-const PostDelete = ({posts}: {posts: Posts[]}) => {
+const PostDelete = ({ posts }: { posts: Posts[] }) => {
     const [modal, setModal] = useState(false);
-  //  DELETE
-    const remove = async (post)=>{
+    //  DELETE
+    const remove = async (post) => {
         // DELETE request
         await xata.db.Posts.delete(post.id)
         setModal(false)
     }
-  return(
-      <MainLayout>
-          <PageTitle title={"Удаление Постов"}/>
-      <div className={posts != 0 ? `sm:columns-2 lg:columns-3` :""}>
-          {posts != 0 ? posts.map(post => (
-              <Post
-                  key={post.id}
-                  post={post}
-                  editable
-                  funcs={{remove}}
-                  states={{setModal}}
-              />
-          )) : <p className={`basic-text text-center text-4xl opacity-70 my-24`}> // Нету постов для удаления </p> }
-      </div>
-    <Modal
-        states={{modal, setModal}}
-        // func={remove}
-        message={"Пост удалён !"}
-    />
-      </MainLayout>
-  )
+    return (
+        <MainLayout>
+            <PageTitle title={"Удаление Постов"} />
+            <div className={posts != 0 ? `sm:columns-2 lg:columns-3` : ""}>
+                {posts != 0 ? posts.map(post => (
+                    <Post
+                        key={post.id}
+                        post={post}
+                        editable
+                        funcs={{ remove }}
+                        states={{ setModal }}
+                    />
+                )) : <p className={`basic-text text-center text-4xl opacity-70 my-24`}> // Нету постов для удаления </p>}
+            </div>
+            <Modal
+                states={{ modal, setModal }}
+                // func={remove}
+                message={"Пост удалён !"}
+            />
+        </MainLayout>
+    )
 }
 
-export  default PostDelete
+export default PostDelete

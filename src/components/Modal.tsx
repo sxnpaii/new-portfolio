@@ -12,7 +12,7 @@ const Modal = ({states, func, message }) => {
                     </button>: ""}
                     <button
                         className={`btn`}
-                        onClick={func}>
+                        onClick={!message ? func: () =>states.setModal(false)}>
                         {!message ? "Конечно!" : "Понятно."}
                     </button>
                 </div>

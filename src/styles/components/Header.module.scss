@@ -15,19 +15,33 @@
       transition: all 330ms ;
       height: 0;
       overflow: hidden;
+      width: 100%;
+      text-align: center;
     }
     .ListItem {
       @apply py-2 px-3 text-white hover:bg-white hover:text-[#252525] rounded transition uppercase text-sm no-underline;
     }
   }
-.active {
+  .active {
+    animation: fade-out 530ms ease-out;
     transition: all 330ms;
-  @media (max-width: 640px) {
-    display: flex;
-    margin: 2em 0 1em 0;
-    height:230px ;
+    @media (max-width: 640px) {
+      display: flex;
+      margin: 2em 0 1em 0;
+      height: 84vh;
+      .ListItem{
+        @apply text-xl tracking-widest
+      }
+    }
   }
 }
+@keyframes fade-out {
+  from {
+    opacity: 0  ;
+  }
+  to{
+    opacity: 1;
+  }
 }
 
 

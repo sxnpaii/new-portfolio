@@ -1,7 +1,7 @@
 .Head{
   @apply mt-32 mb-12;
   .Title{
-    @apply text-6xl mb-5;
+    @apply sm:text-6xl text-5xl mb-5;
   }
   .Description{
     @apply md:w-1/2 opacity-70;

@@ -12,9 +12,9 @@ export const AboutPageMdContent: string = `
 
 
 ### Стэк в 2023 году:
- **HTML, CSS, Bootstrap, SCSS, React, Nextjs, Tailwind, Markdown**
- 
- Если всё ещё интересно пожайлуста [свяжитесь](/contact).
+ **HTML, CSS, Bootstrap, Scss, React, Nextjs, Tailwind, Markdown, Astro** \n и многое другое связанные к веб разработку..
+ <br>
+ Если всё ещё что-то интересно пожайлуста [свяжитесь](/contact).
   
 `;
 export const contactsLinks = [
@@ -35,7 +35,7 @@ export const contactsLinks = [
         link: "https://teletype.in/@sxnpaii"
     },
     {
-        name: "Телеграф или же сам Телеграм",
+        name: "Телеграм",
         link: "https://t.me/sxnpaii_blog"
     },
     {
@@ -58,4 +58,13 @@ export const contactsLinks = [
         name: "GitLab",
         link: "https://gitlab.com/sxnpaii"
     }
+]
+
+export const RouteLinks = [
+    { path: "/", title: "Главная" },
+    { path: "/posts", title: "Посты" },
+    { path: "/mikroblog", title: "Микроблог" },
+    { path: "/about", title: "Обо мне" },
+    { path: "/contact", title: "Контакты" },
+    { path: "/tags", title: "Теги" },
 ]

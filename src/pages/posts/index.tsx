@@ -2,7 +2,7 @@
 import Link from "next/link";
 import Head from "next/head";
 //xata
-import {XataClient, Posts} from "@/new-portfolio/xata";
+import { XataClient, Posts } from "@/new-portfolio/xata";
 //components
 import MainLayout from "@/new-portfolio/components/MainLayout";
 import PageTitle from "@/new-portfolio/components/PageTitle";
@@ -33,32 +33,39 @@ export const getServerSideProps = async () => {
     }
 }
 // UI
-const Posts = ({records}: { records: Posts[] }): JSX.Element => {
+const Posts = ({ records }: { records: Posts[] }): JSX.Element => {
     return (
         <MainLayout>
             <Head>
                 <title>Все Посты || SXNPAII's Universe 🌌</title>
-                <meta property="og:title" content="Все Посты || SXNPAII's Universe 🌌"/>
-                <meta property="og:description" content="Порфолио и Блог Front-end разработчика под ником SXNPAII"/>
+                <meta property="og:title" content="Все Посты || SXNPAII's Universe 🌌" />
+                <meta property="og:description" content="Порфолио и Блог Front-end разработчика под ником SXNPAII" />
             </Head>
             <PageTitle
                 title={`Посты`}
-                description={`Здесь будет показано все посты, находящиеся на сайте, в котором написано с максимальной творческой силой`}/>
+                description={`Здесь будет показано все посты, находящиеся на сайте, в котором написано с максимальной творческой силой`} />
             {/* body */}
-            <div className={records != 0 ? `${sass.Posts}` : ""}>
-                {records !=  0
+            <div
+                className={
+                    records != 0
+                        ?
+                        (records.length <= 4 ? "sm:columns-2" : (`${sass.Posts}`))
+                        :
+                        ""
+                }>
+                {records != 0
                     ?
                     records.map((post) => (
-                        <Post key={post.id} post={post}/>
+                        <Post key={post.id} post={post} />
                     ))
                     :
                     <p className={`${sass.Error} basic-text`}>Автор ещё не успел писать что-то интереснее ))</p>}
             </div>
             <div className={`${sass.Footer} flexbox`}>
-                <a href={`https://medium.com/@sxnpaii`}
+                <a href={`https://t.me/sxnpaii_blog`}
                     className={`${sass.btn} btn flexbox gap-3`}
                 >
-                    Больше постов в <img src="/icons/medium.svg" width={25} height={25} alt=""/>
+                    Больше в <img src="/icons/telegram.svg" width={23} height={23} alt="" /> канале
                 </a>
             </div>
 
