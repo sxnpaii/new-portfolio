@@ -61,10 +61,10 @@ export const contactsLinks = [
 ]
 
 export const RouteLinks = [
-    { path: "/", title: "Главная" },
-    { path: "/posts", title: "Посты" },
-    { path: "/mikroblog", title: "Микроблог" },
-    { path: "/about", title: "Обо мне" },
-    { path: "/contact", title: "Контакты" },
-    { path: "/tags", title: "Теги" },
+    { path: "/", title: "Главная" , isPrivate: false},
+    { path: "/posts", title: "Посты", isPrivate: true },
+    { path: "/microblog", title: "Микроблог", isPrivate: true },
+    { path: "/about", title: "Обо мне", isPrivate: false },
+    { path: "/contact", title: "Контакты", isPrivate: false },
+    { path: "/tags", title: "Теги", isPrivate: true },
 ]

@@ -17,13 +17,10 @@ import PostForm from "../../sections/DashboardPage/PostForm";
 //styles
 import sass from "@/new-portfolio/styles/pages/Dashboard.module.scss";
 import Modal from "@/new-portfolio/components/Modal";
-//data fetching
-//     const xata = getXataClient();
+
 export const getServerSideProps = async () => {
     //GET
     const posts: Posts[] = await xata.db.Posts.getAll();
-    //POST
-
     return {
         props: {
             posts: posts.map(post => ({
@@ -63,7 +60,7 @@ const PostCreate = ({posts}: { posts: Posts[] }): JSX.Element => {
     }
     return (
         <MainLayout>
-            <PageTitle title={`Создание Постов`} description={`lorem20`}/>
+            <PageTitle title={`Создание Постов`} description={``}/>
             {/* body */}
             <PostForm states={{newPost, setNewPost, setModal}}/>
             <Modal

@@ -8,9 +8,9 @@
   }
 
   .Ul {
-    @apply sm:flex-row flex-col justify-between gap-5 sm:m-0 list-none ;
-    margin-block: 0;
-    padding-inline: 0;
+    @apply sm:flex-row flex-col justify-between items-center gap-5 sm:m-0 list-none ;
+    margin: 0;
+    padding: 0;
     @media (max-width: 640px) {
       transition: all 330ms ;
       height: 0;
@@ -19,7 +19,7 @@
       text-align: center;
     }
     .ListItem {
-      @apply py-2 px-3 text-white hover:bg-white hover:text-[#252525] rounded transition uppercase text-sm no-underline;
+      @apply inline-flex py-2 px-3 text-white hover:bg-white hover:text-[#252525] rounded transition uppercase text-sm no-underline border-0;
     }
   }
   .active {
@@ -28,7 +28,7 @@
     @media (max-width: 640px) {
       display: flex;
       margin: 2em 0 1em 0;
-      height: 84vh;
+      height: 70vh;
       .ListItem{
         @apply text-xl tracking-widest
       }
