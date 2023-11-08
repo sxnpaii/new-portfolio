@@ -21,10 +21,6 @@ export const getServerSideProps = async ({ params }) => {
             notFound: true
         }
     }
-    const content = {
-        ...post,
-        published_date: post.published_date?.toDateString()
-    }
     return {
         props: {
             content: {
@@ -51,8 +47,7 @@ const Post = ({ content }: { content: Posts[] }): JSX.Element => {
                 {/*body*/}
                 <div className={`${sass.Body}`}>
                     <img
-                        src={content.img_cover_url}
-                        alt={content.img_cover_url}
+                        src={content.cover_img.url}
                         className={`${sass.Img}`}
                     />
                     {/* content */}

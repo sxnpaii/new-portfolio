@@ -14,7 +14,7 @@ const RandomPosts = ({ posts }: { posts: Posts[] }): JSX.Element => {
                     posts.map((post) => (
                         <div key={post.id} className={`${sass.Post}`} data-scroll>
                             <Link href={`/posts/${post.id}`} className={`${sass.ImgLink}`}>
-                                <img src={post.img_cover_url} alt="" className={`${sass.Img}`} />
+                                <img src={post.cover_img.url} alt="" className={`${sass.Img}`} />
                             </Link>
                             <div className={`${sass.PostBody}`}>
                                 <h6 className={`${sass.PostTitle} heading-text`}>{post.title}</h6>

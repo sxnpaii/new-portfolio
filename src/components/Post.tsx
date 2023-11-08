@@ -6,7 +6,7 @@ const Post = ({post, editable= false, funcs, states}): JSX.Element => {
     return (
         <div className={`${sass.Post}`}>
             <Link href={`/posts/${post.id}`}>
-                <img src={post.img_cover_url} alt=""/>
+                <img src={post.cover_img.url} alt={post.cover_img.name}/>
             </Link>
             <div className={`${sass.PostBody}`}>
                 <div className={`${sass.PostHeading} flexbox`}>

@@ -9,7 +9,7 @@ import PageTitle from "@/new-portfolio/components/PageTitle";
 
 //enable browser
 const xata = new XataClient({
-    apiKey: "xau_6ERkGTFFVkgmdJ9OusDimEDrgrvcNqvm2",
+    apiKey: process.env.NEXT_PUBLIC_API_KEY,
     enableBrowser: true
 })
 
