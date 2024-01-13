@@ -35,7 +35,6 @@ const Dashboard = (): JSX.Element => {
 
     // POST request
     try {
-      ("use server");
       await xataClientReq.db.Posts.create({
         ...newPost,
         tags: newPost.tags.split(" "),
