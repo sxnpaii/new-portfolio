@@ -2,7 +2,8 @@
 import Head from "next/head";
 import Link from "next/link";
 //xata
-import { XataClient, Posts } from "@/new-portfolio/xata";
+import { Posts } from "@/new-portfolio/xata/xata";
+import { xataServerReq } from "@/new-portfolio/xata/xataRequest";
 //components
 import MainLayout from "@/new-portfolio/components/MainLayout";
 import Md from "@/new-portfolio/components/Md";
@@ -12,70 +13,65 @@ import sass from "@/new-portfolio/styles/pages/Post.module.scss";
 import { styles } from "@/new-portfolio/styles/Basics";
 //data fetching
 export const getServerSideProps = async ({ params }) => {
-    const xata = new XataClient({
-        apiKey: process.env.NEXT_PUBLIC_API_KEY
-    });
-    const post: Posts[] = await xata.db.Posts.read(`${params.id}`);
-    if (!post) {
-        return {
-            notFound: true
-        }
-    }
+  const post: Posts[] = await xataServerReq.db.Posts.read(`${params.id}`);
+  if (!post) {
     return {
-        props: {
-            content: {
-                ...post,
-                published_date: post.published_date?.toDateString()
-            }
-        }
-    }
-}
+      notFound: true,
+    };
+  }
+  return {
+    props: {
+      content: {
+        ...post,
+        published_date: post.published_date?.toDateString(),
+      },
+    },
+  };
+};
 //ui
 const Post = ({ content }: { content: Posts[] }): JSX.Element => {
-
-    return (
-        <MainLayout>
-
-            <Head>
-                <title>{content.title} || SXNPAII`s Universe </title>
-                <meta property="og:title" content={`${content.title}`} />
-                <meta property="og:image" content={`${content.img_cover_url}`} />
-            </Head>
-            <main className={` ${sass.Main}`}>
-                {/*<style scoped>{DefaultStyles}</style>*/}
-                <PageTitle title={content.title} description={content.description} />
-                {/*body*/}
-                <div className={`${sass.Body}`}>
-                    <img
-                        src={content.cover_img.url}
-                        className={`${sass.Img}`}
-                    />
-                    {/* content */}
-                    <Md
-                        markdown={content.content}
-                        className={` ${sass.Content} basic-text `}
-
-                    />
-                    {/* footer */}
-                    <div className={sass.Footer}>
-                        <div className={`${sass.Tags}`}>
-                            <b className={`heading-text ${sass.Hint}`}>
-                                Теги:
-                            </b>
-                            {content.tags.map(tag => (
-                                <Link href={`/tags/${tag}`} key={tag} className={`${sass.Tag} basic-text`}>#{tag}</Link>
-                            ))}
-                        </div>
-                        <b className="basic-text">{content.published_date}</b>
-                    </div>
-                </div>
-            </main>
-            {/*basic styles for this page*/}
-            <style scoped jsx>
-                {styles}
-            </style>
-        </MainLayout>
-    )
-}
+  return (
+    <MainLayout>
+      <Head>
+        <title>{content.title} || SXNPAII`s Universe </title>
+        <meta property="og:title" content={`${content.title}`} />
+        <meta property="og:image" content={`${content.img_cover_url}`} />
+      </Head>
+      <main className={` ${sass.Main}`}>
+        {/*<style scoped>{DefaultStyles}</style>*/}
+        <PageTitle title={content.title} description={content.description} />
+        {/*body*/}
+        <div className={`${sass.Body}`}>
+          <img src={content.cover_img.url} className={`${sass.Img}`} />
+          {/* content */}
+          <Md
+            markdown={content.content}
+            className={` ${sass.Content} basic-text `}
+          />
+          {/* footer */}
+          <div className={sass.Footer}>
+            <div className={`${sass.Tags}`}>
+              <b className={`heading-text ${sass.Hint}`}>Теги:</b>
+              {content.tags.map((tag) => (
+                <Link
+                  href={`/tags/${tag}`}
+                  key={tag}
+                  className={`${sass.Tag} basic-text`}
+                >
+                  #{tag}
+                </Link>
+              ))}
+            </div>
+            <b className="basic-text">{content.published_date}</b>
+          </div>
+        </div>
+      </main>
+      {/*basic styles for this page*/}
+      <style scoped jsx>
+        {styles}
+      </style>
+    </MainLayout>
+  );
+};
 
 export default Post;

@@ -15,7 +15,7 @@ const tables = [
       { name: "published_date", type: "datetime" },
       { name: "content", type: "text" },
       { name: "tags", type: "multiple" },
-      { name: "cover_img", type: "file" },
+      { name: "cover_img", type: "file", file: { defaultPublicAccess: true } },
     ],
   },
   {

@@ -62,7 +62,7 @@ export const contactsLinks = [
 
 export const RouteLinks = [
     { path: "/", title: "Главная" , isPrivate: false},
-    { path: "/posts", title: "Посты", isPrivate: true },
+    { path: "/posts", title: "Посты", isPrivate: false },
     { path: "/microblog", title: "Микроблог", isPrivate: true },
     { path: "/about", title: "Обо мне", isPrivate: false },
     { path: "/contact", title: "Контакты", isPrivate: false },
