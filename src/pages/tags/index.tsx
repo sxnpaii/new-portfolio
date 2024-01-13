@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { Posts } from "@/new-portfolio/xata/xata";
-import { xataServerReq } from "@/new-portfolio/xata/xataRequest";
+import { xataClientReq } from "@/new-portfolio/xata/xataRequest";
 //components
 import MainLayout from "@/new-portfolio/components/MainLayout";
 import PageTitle from "@/new-portfolio/components/PageTitle";
@@ -9,7 +9,7 @@ import sass from "@/new-portfolio/styles/pages/Tags.module.scss";
 import Head from "next/head";
 
 export const getServerSideProps = async () => {
-  const posts: Posts[] = await xataServerReq.db.Posts.select(["tags"]).getAll();
+  const posts: Posts[] = await xataClientReq.db.Posts.select(["tags"]).getAll();
   // console.log(posts);
   return {
     props: {

@@ -1,8 +1,8 @@
-import { XataClient, getXataClient } from "./xata";
+import { XataClient } from "./xata";
 
-export const xataServerReq = getXataClient();
-
-export const xataClientReq = new XataClient({
-  apiKey: process.env.XATA_API_KEY,
+const xataClientReq = new XataClient({
+  apiKey: process.env.NEXT_PUBLIC_XATA_API_KEY,
   enableBrowser: true,
 });
+
+export { xataClientReq };

@@ -3,7 +3,7 @@ import Head from "next/head";
 import Link from "next/link";
 //xata
 import { Posts } from "@/new-portfolio/xata/xata";
-import { xataServerReq } from "@/new-portfolio/xata/xataRequest";
+import { xataClientReq } from "@/new-portfolio/xata/xataRequest";
 //components
 import MainLayout from "@/new-portfolio/components/MainLayout";
 import Md from "@/new-portfolio/components/Md";
@@ -13,7 +13,7 @@ import sass from "@/new-portfolio/styles/pages/Post.module.scss";
 import { styles } from "@/new-portfolio/styles/Basics";
 //data fetching
 export const getServerSideProps = async ({ params }) => {
-  const post: Posts[] = await xataServerReq.db.Posts.read(`${params.id}`);
+  const post: Posts[] = await xataClientReq.db.Posts.read(`${params.id}`);
   if (!post) {
     return {
       notFound: true,

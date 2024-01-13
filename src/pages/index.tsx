@@ -5,7 +5,7 @@ import {useRef, useState} from "react";
 import {useRouter} from 'next/router';
 //xata
 import {XataClient, Portfolio, Posts} from "@/new-portfolio/xata/xata";
-import { xataServerReq } from '../xata/xataRequest';
+import { xataClientReq } from '../xata/xataRequest';
 // loco scroll animations
 import {LocomotiveScrollProvider} from 'react-locomotive-scroll';
 //components
@@ -18,8 +18,8 @@ import PortfolioSc from "@/new-portfolio/sections/HomePage/Portfolio";
 import RandomPosts from "@/new-portfolio/sections/HomePage/RandomPosts";
 // data from xata db
 export const getServerSideProps = async () => {
-    const records: Portfolio[] = await xataServerReq.db.Portfolio.getAll();
-    const posts: Posts[] = await xataServerReq.db.Posts.sort("published_date", "desc").getMany({
+    const records: Portfolio[] = await xataClientReq.db.Portfolio.getAll();
+    const posts: Posts[] = await xataClientReq.db.Posts.sort("published_date", "desc").getMany({
         pagination: {size: 3},
     });
     return {
