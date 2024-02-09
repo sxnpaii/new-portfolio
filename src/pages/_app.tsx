@@ -1,7 +1,5 @@
 import Head from "next/head";
 import NextNProgress from "nextjs-progressbar";
-// auth
-import { ClerkProvider } from "@clerk/nextjs";
 // styles
 import "@/new-portfolio/styles/globals.scss";
 import "locomotive-scroll/dist/locomotive-scroll.css";
@@ -15,9 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/personal/logo.svg" />
       </Head>
       <NextNProgress color="white" options={{ showSpinner: false }} />
-      <ClerkProvider {...pageProps}>
         <Component {...pageProps} />
-      </ClerkProvider>
     </>
   );
 }

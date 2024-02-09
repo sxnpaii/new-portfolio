@@ -1,5 +1,5 @@
 .Main {
-  @apply sm:w-[70%] mx-auto;
+  @apply sm:w-[55%] mx-auto;
 
   .Body {
     .Img {
@@ -7,7 +7,7 @@
     }
 
     .Content {
-      @apply mb-16;
+      @apply text-lg mb-16;
     }
 
     .Footer {

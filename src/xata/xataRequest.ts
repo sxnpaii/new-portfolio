@@ -6,4 +6,5 @@ const xataClientReq = new XataClient({
   enableBrowser: true,
 });
 
+
 export { xataClientReq };

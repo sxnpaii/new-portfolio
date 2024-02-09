@@ -23,12 +23,12 @@ export const contactsLinks = [
         link: "https://t.me/sxnpaii"
     },
     {
-        name: "Инстаграм",
-        link: "https://instagram.com/the_sxnpaii"
-    },
-    {
         name: "Гитхаб",
         link: "https://github.com/sxnpaii"
+    },
+    {
+        name: "Твиттер (Икс)",
+        link: "https://twitter.com/the_sxnpaii"
     },
     {
         name: "Телетайп",
@@ -42,29 +42,13 @@ export const contactsLinks = [
         name: "Медиум",
         link: "https://medium.com/@sxnpaii"
     },
-    {
-        name: "Твиттер (Икс)",
-        link: "https://twitter.com/the_sxnpaii"
-    },
-    {
-        name: "Dev.to",
-        link: "https://dev.to/sxnpaii"
-    },
-    {
-        name: "Daily dev",
-        link: "https://app.daily.dev/sxnpaii"
-    },
-    {
-        name: "GitLab",
-        link: "https://gitlab.com/sxnpaii"
-    }
 ]
 
 export const RouteLinks = [
     { path: "/", title: "Главная" , isPrivate: false},
     { path: "/posts", title: "Посты", isPrivate: false },
-    { path: "/microblog", title: "Микроблог", isPrivate: true },
+    { path: "/microblog", title: "Микроблог", isPrivate: false },
     { path: "/about", title: "Обо мне", isPrivate: false },
     { path: "/contact", title: "Контакты", isPrivate: false },
-    { path: "/tags", title: "Теги", isPrivate: true },
+    { path: "/tags", title: "Теги", isPrivate: false },
 ]

@@ -11,6 +11,7 @@ import PageTitle from "@/new-portfolio/components/PageTitle";
 //styles
 import sass from "@/new-portfolio/styles/pages/Post.module.scss";
 import { styles } from "@/new-portfolio/styles/Basics";
+import moment from "moment";
 //data fetching
 export const getServerSideProps = async ({ params }) => {
   const post: Posts[] = await xataClientReq.db.Posts.read(`${params.id}`);
@@ -29,17 +30,21 @@ export const getServerSideProps = async ({ params }) => {
   };
 };
 //ui
-const Post = ({ content }: { content: Posts[] }): JSX.Element => {
+const Post = ({ content }: { content: Posts }): JSX.Element => {
   return (
     <MainLayout>
       <Head>
         <title>{content.title} || SXNPAII`s Universe </title>
         <meta property="og:title" content={`${content.title}`} />
-        <meta property="og:image" content={`${content.img_cover_url}`} />
+        <meta property="og:description" content={`${content.description}`} />
+        <meta property="og:image" content={`${content.cover_img.url}`} />
       </Head>
       <main className={` ${sass.Main}`}>
-        {/*<style scoped>{DefaultStyles}</style>*/}
-        <PageTitle title={content.title} description={content.description} />
+        <PageTitle
+          title={content.title}
+          description={content.description}
+          isPost
+        />
         {/*body*/}
         <div className={`${sass.Body}`}>
           <img src={content.cover_img.url} className={`${sass.Img}`} />
@@ -48,21 +53,24 @@ const Post = ({ content }: { content: Posts[] }): JSX.Element => {
             markdown={content.content}
             className={` ${sass.Content} basic-text `}
           />
-          {/* footer */}
+          w{/* footer */}
           <div className={sass.Footer}>
             <div className={`${sass.Tags}`}>
               <b className={`heading-text ${sass.Hint}`}>Теги:</b>
-              {content.tags.map((tag) => (
-                <Link
-                  href={`/tags/${tag}`}
-                  key={tag}
-                  className={`${sass.Tag} basic-text`}
-                >
-                  #{tag}
-                </Link>
-              ))}
+              {content.tags &&
+                content.tags.map((tag) => (
+                  <Link
+                    href={`/tags/${tag}`}
+                    key={tag}
+                    className={`${sass.Tag} basic-text`}
+                  >
+                    #{tag}
+                  </Link>
+                ))}
             </div>
-            <b className="basic-text">{content.published_date}</b>
+            <b className="basic-text">
+              {moment(content.published_date).format("LLLL")}
+            </b>
           </div>
         </div>
       </main>

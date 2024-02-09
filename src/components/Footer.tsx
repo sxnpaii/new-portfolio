@@ -12,9 +12,6 @@ const Footer = (): JSX.Element => {
                 <a href="https://t.me/sxnpaii" target="_blank">
                     <img className={`${sass.logo}`} src="/icons/telegram.svg" alt=""/>
                 </a>
-                <a href="https://instagram.com/the_sxnpaii" target="_blank">
-                    <img className={`${sass.logo}`} src="/icons/instagram.svg" alt=""/>
-                </a>
                 <a href="https://twitter.com/the_sxnpaii" target="_blank">
                     <img className={`${sass.logo}`} src="/icons/twitter-x.svg" alt=""/>
                 </a>

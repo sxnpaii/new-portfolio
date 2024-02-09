@@ -11,7 +11,7 @@ const RandomPosts = ({ posts }: { posts: Posts[] }): JSX.Element => {
           data-scroll
           data-scroll-speed="1.5"
         >
-          Рандомные Посты
+          Последние Посты
         </h3>
       </div>
       <div className={`${sass.Posts} `}>

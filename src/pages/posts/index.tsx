@@ -14,7 +14,7 @@ import sass from "@/new-portfolio/styles/pages/Posts.module.scss";
 
 //receive data from xata
 export const getServerSideProps = async () => {
-  const records: Posts[] = await xataClientReq.db.Posts.getAll();
+  const records: Posts[] = await xataClientReq.db.Posts.sort("published_date", "desc").getAll();
   //send to client
   return {
     props: {

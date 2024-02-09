@@ -19,11 +19,10 @@ const About = (): JSX.Element => {
         />
         <meta property="og:image" content={`/personal/AboutPageImg.jpg`} />
       </Head>
-      {/*<PageTitle title={`Немножко обо мне`} description={''}/>*/}
       {/*body*/}
-      <img className={`${sass.Img}`} src="/personal/AboutPageImg.jpg" alt="" />
-      <Md className={`basic-text text-center `} markdown={AboutPageMdContent} />
-      <style jsx>{styles}</style>
+      <img className={`${sass.Img}`} src="/personal/AboutPageImg.jpg" alt="Abdulkhayev Khurshid" />
+      <Md className={`basic-text md:w-3/4  xl:w-1/2 mx-auto text-xl leading-normal`} markdown={AboutPageMdContent} />
+      <style scoped jsx>{styles}</style>
     </MainLayout>
   );
 };

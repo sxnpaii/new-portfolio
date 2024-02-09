@@ -6,7 +6,7 @@ h1 {
   display: block;
   font-weight: bold;
   font-size: 2em;
-  margin-top: 30px
+  margin-top: 30px;
 }
 h2 {
   display: block;
