@@ -11,7 +11,6 @@ import Post from "@/new-portfolio/components/Post";
 import PostForm from "../../sections/DashboardPage/PostForm";
 //styles
 import sass from "@/new-portfolio/styles/pages/Dashboard.module.scss";
-
 const Dashboard = (): JSX.Element => {
   //MODAL STATE
   const [modal, setModal] = useState(false);
@@ -19,7 +18,7 @@ const Dashboard = (): JSX.Element => {
     title: null,
     description: null,
     content: null,
-    published_date: new Date(),
+    published_date: new Date().toISOString(),
     cover_img: [
       {
         name: null,
@@ -35,7 +34,7 @@ const Dashboard = (): JSX.Element => {
 
     // POST request
     try {
-     const fromServer = await xataClientReq.db.Posts.create({
+      const fromServer = xataClientReq.db.Posts.create({
         ...newPost,
         tags: newPost.tags.split(" "),
         cover_img: newPost.cover_img[0],
@@ -48,8 +47,7 @@ const Dashboard = (): JSX.Element => {
     setModal(false);
   };
 
-  if(insert){
-    
+  if (insert) {
     return (
       <MainLayout>
         <PageTitle title={`Создание Постов`} description={``} />
@@ -58,7 +56,6 @@ const Dashboard = (): JSX.Element => {
         <Modal states={{ modal, setModal }} func={insert} />
       </MainLayout>
     );
-  }
-  else <h1>Test error message </h1>
+  } else <h1>Test error message </h1>;
 };
 export default Dashboard;

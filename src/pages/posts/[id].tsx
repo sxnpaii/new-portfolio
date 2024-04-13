@@ -53,7 +53,7 @@ const Post = ({ content }: { content: Posts }): JSX.Element => {
             markdown={content.content}
             className={` ${sass.Content} basic-text `}
           />
-          w{/* footer */}
+          {/* footer */}
           <div className={sass.Footer}>
             <div className={`${sass.Tags}`}>
               <b className={`heading-text ${sass.Hint}`}>Теги:</b>

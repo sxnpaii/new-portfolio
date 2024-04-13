@@ -31,8 +31,8 @@ const PostDelete = ({ posts }: { posts: Posts[] }) => {
   return (
     <MainLayout>
       <PageTitle title={"Удаление Постов"} />
-      <div className={posts != 0 ? `sm:columns-2 lg:columns-3` : ""}>
-        {posts != 0 ? (
+      <div className={posts.length != 0 ? `sm:columns-2 lg:columns-3` : ""}>
+        {posts.length != 0 ? (
           posts.map((post) => (
             <Post
               key={post.id}
