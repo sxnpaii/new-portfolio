@@ -1,0 +1,16 @@
+{
+  "id": "mig_cgulafse6l8viunqcmr0",
+  "parentID": "mig_cgulabce6l8viunqcmq0",
+  "checksum": "1:e9f52dd21528690f12e22d2978add38bd8782abb91750b1ade635b2f480f7cad",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "description",
+          "type": "text"
+        },
+        "table": "LandingImages"
+      }
+    }
+  ]
+}

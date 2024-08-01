@@ -1,0 +1,16 @@
+{
+  "id": "mig_ck7l13atqumll0l9ls40",
+  "parentID": "mig_ck7i4sitqumll0l9lfh0",
+  "checksum": "1:11efd24546a3890f17189f8ad0a435b255cf0386448f12623ad6c1285327c7e3",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "project_url",
+          "type": "text"
+        },
+        "table": "Portfolio"
+      }
+    }
+  ]
+}

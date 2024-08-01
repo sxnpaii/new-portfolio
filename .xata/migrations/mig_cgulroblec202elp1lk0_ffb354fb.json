@@ -1,0 +1,14 @@
+{
+  "id": "mig_cgulroblec202elp1lk0",
+  "parentID": "mig_cgulrlrlec202elp1li0",
+  "checksum": "1:ffb354fbd5c42f66ad1a55378ac3bf30ac93bc4fcb9b3bd1bcdaa2dea56c192d",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "project",
+        "oldName": "projectName",
+        "table": "portfolio"
+      }
+    }
+  ]
+}

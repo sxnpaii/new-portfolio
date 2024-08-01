@@ -1,0 +1,16 @@
+{
+  "id": "mig_cgulrlrlec202elp1li0",
+  "parentID": "mig_cgulr93lec202elp1lfg",
+  "checksum": "1:db52df9418ddb426da25322b699b0134fdcaa457a2a7624fb5545c3037208ee5",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "gh_repo",
+          "type": "string"
+        },
+        "table": "portfolio"
+      }
+    }
+  ]
+}

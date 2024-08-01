@@ -1,0 +1,12 @@
+{
+  "id": "mig_cgula29v3eh5oav2rcog",
+  "parentID": "mig_cgukuh9v3eh5oav2rbu0",
+  "checksum": "1:7ae6ded80bc0d1ae1f217a59166bcebf50cbd9fe004a447dd8a7dc699576f387",
+  "operations": [
+    {
+      "addTable": {
+        "table": "LandingImages"
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "id": "mig_cjflk829hl5ia8pu5l10",
+  "parentID": "mig_cjfljvi9hl5ia8pu5l00",
+  "checksum": "1:5040b4d969b998d80238232a1535dae0242a5be900db6dc692c816cb9bd5fde8",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "test",
+          "type": "link",
+          "link": {
+            "table": "Posts"
+          }
+        },
+        "table": "test"
+      }
+    }
+  ]
+}

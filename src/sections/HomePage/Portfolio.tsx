@@ -2,7 +2,7 @@ import Md from "@/new-portfolio/components/Md";
 import { Portfolio } from "@/new-portfolio/xata/xata";
 import sass from "@/new-portfolio/styles/sections/HomePage/PortfolioSc.module.scss";
 
-const Portfolio = ({ records }: { records: Portfolio[] }): JSX.Element => {
+const PortfolioSc = ({ records }: { records: Portfolio[] }): JSX.Element => {
   return (
     <section className={`${sass.Portfolio} mt-32`} data-scroll-container>
       <div className={`${sass.Head}`} data-scroll>
@@ -23,7 +23,7 @@ const Portfolio = ({ records }: { records: Portfolio[] }): JSX.Element => {
         </p>
       </div>
       <div className={`${sass.Block}`}>
-        {records.map((record) => (
+        {records && records.map((record) => (
           <div
             className={`${sass.Work}`}
             key={record.id}
@@ -61,4 +61,4 @@ const Portfolio = ({ records }: { records: Portfolio[] }): JSX.Element => {
   );
 };
 
-export default Portfolio;
+export default PortfolioSc;

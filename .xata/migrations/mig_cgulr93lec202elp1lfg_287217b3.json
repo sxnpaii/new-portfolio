@@ -1,0 +1,13 @@
+{
+  "id": "mig_cgulr93lec202elp1lfg",
+  "parentID": "mig_cgulpa1v3eh5oav2rv90",
+  "checksum": "1:287217b36ffac313c2da66fdb4370d283c3dbd168a9d4de324a7546285f9f4d8",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "portfolio",
+        "oldName": "LandingImages"
+      }
+    }
+  ]
+}

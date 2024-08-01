@@ -1,0 +1,16 @@
+{
+  "id": "mig_cguke45b86ldbu8mtddg",
+  "parentID": "mig_cgukdotb86ldbu8mtdcg",
+  "checksum": "1:fac25ac77e31f2cd681aa5bf117453e01fbcd9d19d4d1c4c76b824c2cab532fc",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "description",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

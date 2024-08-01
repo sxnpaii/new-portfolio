@@ -1,0 +1,19 @@
+{
+  "id": "mig_cl5mfuv2g5c1s36enrq0",
+  "parentID": "mig_cl5mfqv2g5c1s36enrkg",
+  "checksum": "1:56441f3e73ca957200c64bdbe7cb183ed4b4a842c15f9834f5bdbd070dc14587",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "cover_img",
+          "type": "file",
+          "file": {
+            "defaultPublicAccess": true
+          }
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}

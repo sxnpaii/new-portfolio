@@ -1,0 +1,14 @@
+{
+  "id": "mig_chgiof5c6b0ovuf5gskg",
+  "parentID": "mig_chginqmkgcmov6g39n20",
+  "checksum": "1:cc5b789ea09c4340b76118642c6058c58edbf6daf08c265e10d5c7d012bf11d9",
+  "operations": [
+    {
+      "renameColumn": {
+        "newName": "img_cover_url",
+        "oldName": "img_cover",
+        "table": "Posts"
+      }
+    }
+  ]
+}

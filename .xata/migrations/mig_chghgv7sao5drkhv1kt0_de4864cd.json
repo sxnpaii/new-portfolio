@@ -1,0 +1,13 @@
+{
+  "id": "mig_chghgv7sao5drkhv1kt0",
+  "parentID": "mig_cguls08chqnc41s97g6g",
+  "checksum": "1:de4864cd0035f5b1dc9f1cee3648ccb8c4c1d341c04852c570670d4ba26324ba",
+  "operations": [
+    {
+      "renameTable": {
+        "newName": "Portfolio",
+        "oldName": "portfolio"
+      }
+    }
+  ]
+}

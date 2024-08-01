@@ -1,0 +1,18 @@
+{
+  "id": "mig_cn6892ssq21bi4u7ee5g",
+  "parentID": "mig_cn6854csq21bi4u7ee4g",
+  "checksum": "1:d7b808a0f2d9d64726644753520b8a53cdaad519c3779d6411e1e4c99ff07457",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "content",
+          "type": "text",
+          "notNull": true,
+          "defaultValue": "\"\""
+        },
+        "table": "MiniNotes"
+      }
+    }
+  ]
+}

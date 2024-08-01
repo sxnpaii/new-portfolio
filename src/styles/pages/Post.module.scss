@@ -1,13 +1,12 @@
 .Main {
-  @apply sm:w-[55%] mx-auto;
-
+  @apply sm:w-[45%] mx-auto;
   .Body {
     .Img {
-      @apply mx-auto mb-8;
+      @apply mx-auto mb-8 w-full;
     }
 
     .Content {
-      @apply text-lg mb-16 opacity-90;
+      @apply text-lg mb-16 opacity-90 mx-auto;
     }
 
     .Footer {

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cn6899c59u3cdd946tn0",
+  "parentID": "mig_cn6892ssq21bi4u7ee5g",
+  "checksum": "1:ebfcc4ad4829a1ba2d4d33c5464641fde9b20f94c51dc22acb3c867c258e2ba0",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "tags",
+          "type": "multiple"
+        },
+        "table": "MiniNotes"
+      }
+    }
+  ]
+}

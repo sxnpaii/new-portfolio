@@ -1,0 +1,13 @@
+{
+  "id": "mig_ck7lvcitqumll0l9m08g",
+  "parentID": "mig_ck7lv8i3su15fg3g8gi0",
+  "checksum": "1:060a3c579275ec936c507e95e4ad1583f53dbf34b4c9a63a3c9aae0bef867038",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "img",
+        "table": "Portfolio"
+      }
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "mig_cguls08chqnc41s97g6g",
+  "parentID": "mig_cgulroblec202elp1lk0",
+  "checksum": "1:b5071b975486c9d29e13d721e60c663c5ae596ff60baf6dd3aa0330460e4fffa",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "file_in_tg",
+          "type": "string"
+        },
+        "table": "portfolio"
+      }
+    }
+  ]
+}

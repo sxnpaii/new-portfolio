@@ -1,0 +1,19 @@
+{
+  "id": "mig_ck7lv8i3su15fg3g8gi0",
+  "parentID": "mig_ck7l13atqumll0l9ls40",
+  "checksum": "1:10b7d7bbe3ae6d0e8fdd3667bb2b053c796b30cbf41dff31d693a64906404984",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "img",
+          "type": "file[]",
+          "file[]": {
+            "defaultPublicAccess": true
+          }
+        },
+        "table": "Portfolio"
+      }
+    }
+  ]
+}

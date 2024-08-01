@@ -1,0 +1,13 @@
+{
+  "id": "mig_cl5mfqv2g5c1s36enrkg",
+  "parentID": "mig_cl5m4ff2g5c1s36enq8g",
+  "checksum": "1:7a0e294f17cbe0bce85e2ae50d416459fcdbff15b764fded35932148193a4c8f",
+  "operations": [
+    {
+      "removeColumn": {
+        "column": "cover_img",
+        "table": "Posts"
+      }
+    }
+  ]
+}

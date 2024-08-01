@@ -1,0 +1,12 @@
+{
+  "id": "mig_cqjq3e9e8apn4e2pqqk0",
+  "parentID": "mig_cn6899c59u3cdd946tn0",
+  "checksum": "1:9be8ff71e33d876817b77175fb41d6f60a6783542c575d02b6bd2fdbb95fdda1",
+  "operations": [
+    {
+      "removeTable": {
+        "table": "MiniNotes"
+      }
+    }
+  ]
+}

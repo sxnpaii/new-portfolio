@@ -1,0 +1,16 @@
+{
+  "id": "mig_chginqmkgcmov6g39n20",
+  "parentID": "mig_chghgv7sao5drkhv1kt0",
+  "checksum": "1:96edb7d473de081a256eed0f404a5bce86d0227f644b2956b736832700f77fb1",
+  "operations": [
+    {
+      "addColumn": {
+        "column": {
+          "name": "img_cover",
+          "type": "string"
+        },
+        "table": "Posts"
+      }
+    }
+  ]
+}
