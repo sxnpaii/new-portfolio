@@ -34,10 +34,17 @@ const Dashboard = (): JSX.Element => {
 
     // POST request
     try {
-      const fromServer = xataClientReq.db.Posts.create({
+      if (!newPost.title && !newPost.content){
+        alert("Fill the form!")
+        throw new Error("Fill the form!")
+      }
+      const fromServer = await xataClientReq.db.Posts.create({
         ...newPost,
         tags: newPost.tags.split(" "),
-        cover_img: newPost.cover_img[0],
+        cover_img:
+          newPost.cover_img[0].base64Content !== null
+            ? newPost.cover_img[0]
+            : null,
       });
       return fromServer;
     } catch (err) {
@@ -56,6 +63,6 @@ const Dashboard = (): JSX.Element => {
         <Modal states={{ modal, setModal }} func={insert} />
       </MainLayout>
     );
-  } else <h1>Test error message </h1>;
+  } else <h1>Test errorw message </h1>;
 };
 export default Dashboard;

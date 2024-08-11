@@ -17,28 +17,27 @@ const PostForm = ({ states }) => {
   };
   return (
     <form className={`${sass.Form} flexbox`}>
-      <div className={`${sass.HeadEls} flexbox`}>
-        <input
-          placeholder="Title"
-          className={`${sass.Title} heading-text`}
-          type="text"
-          onChange={(e) =>
-            states.setNewPost({ ...states.newPost, title: e.target.value })
-          }
-        />
-        <input
-          placeholder="Description"
-          className={`${sass.Description} basic-text`}
-          type="text"
-          onChange={(e) =>
-            states.setNewPost({
-              ...states.newPost,
-              description: e.target.value,
-            })
-          }
-        />
-      </div>
       <input
+        required
+        placeholder="Title"
+        className={`${sass.Title} heading-text`}
+        type="text"
+        onChange={(e) =>
+          states.setNewPost({ ...states.newPost, title: e.target.value })
+        }
+      />
+      <textarea
+        placeholder="Description"
+        className={`${sass.Description} basic-text`}
+        onChange={(e) =>
+          states.setNewPost({
+            ...states.newPost,
+            description: e.target.value,
+          })
+        }
+      />
+      <input
+        required
         placeholder="Image Url"
         className={`${sass.ImageUrl} basic-text`}
         type="file"
@@ -70,6 +69,7 @@ const PostForm = ({ states }) => {
         </a>
       </i>
       <input
+        required
         placeholder="Tags"
         className={`${sass.Tags} basic-text`}
         type="text"

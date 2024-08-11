@@ -49,7 +49,7 @@ const Post = ({ content }: { content: Posts }): JSX.Element => {
         <div className={`${sass.Body}`}>
           {content.cover_img && (
             <img src={content.cover_img.url} className={`${sass.Img}`} />
-          )}ff
+          )}
           {/* content */}
           <Md
             markdown={content.content}
