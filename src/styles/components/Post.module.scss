@@ -1,32 +1,32 @@
 .Post {
-  @apply w-full overflow-hidden mb-5 transition bg-[#18181880];
+  @apply w-full max-w-[700px] mb-3 overflow-hidden h-fit transition bg-[#18181880] break-inside-avoid;
   .PostBody {
-    @apply px-5 pt-3 pb-6;
+    @apply px-3 sm:px-5 pt-3 pb-6;
     .PostHeading {
-      @apply justify-between items-center flex-wrap-reverse gap-x-3 ;
+      @apply justify-between items-center flex-wrap-reverse gap-x-3;
       .PostTitle {
-        @apply mb-2 capitalize text-2xl gap-5
+        @apply mb-2 capitalize text-base leading-5 sm:text-2xl gap-5;
       }
 
       .PostDate {
-        @apply text-sm;
+        @apply text-sm max-sm:text-xs; 
       }
     }
 
     .PostDescription {
-      @apply opacity-50 mb-8;
+      @apply opacity-50 mb-8 max-sm:text-xs;
     }
   }
 
   .PostFooter {
     @apply items-center justify-between gap-x-3 gap-y-5;
     .PostLink {
-      @apply text-sm;
+      @apply text-xs;
     }
 
     .Tags {
       .PostTag {
-        @apply text-sm hover:underline;
+        @apply sm:text-sm text-xs hover:underline leading-none;
       }
     }
   }

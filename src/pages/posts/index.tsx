@@ -49,14 +49,14 @@ const Posts = ({ records }: { records: Posts[] }): JSX.Element => {
       {/* body */}
       <div
         className={
-          records != 0
+          records.length != 0
             ? records.length <= 4
               ? "sm:columns-2"
               : `${sass.Posts}`
             : ""
         }
       >
-        {records != 0 ? (
+        {records.length != 0 ? (
           records.map((post) => <Post key={post.id} post={post} />)
         ) : (
           <p className={`${sass.Error} basic-text`}>

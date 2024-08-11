@@ -5,9 +5,12 @@ import moment from "moment";
 const Post = ({ post, editable = false, funcs, states }): JSX.Element => {
   return (
     <div className={`${sass.Post}`}>
-      <Link href={`/posts/${post.id}`}>
-        <img src={post.cover_img.url} alt={post.cover_img.name} />
-      </Link>
+      {post.cover_img && (
+        <Link href={`/posts/${post.id}`}>
+          <img src={post.cover_img.url} alt={post.cover_img.name} />
+        </Link>
+      )}
+
       <div className={`${sass.PostBody}`}>
         <div className={`${sass.PostHeading} flexbox`}>
           <h3 className={`${sass.PostTitle} heading-text flexbox `}>
@@ -22,7 +25,9 @@ const Post = ({ post, editable = false, funcs, states }): JSX.Element => {
             </div>
             {post.title}
           </h3>
-          <p className={`${sass.PostDate} basic-text`}>{moment(post.published_date).fromNow()}</p>
+          <p className={`${sass.PostDate} basic-text`}>
+            {moment(post.published_date).fromNow()}
+          </p>
         </div>
         <p className={`${sass.PostDescription} basic-text`}>
           {post.description}

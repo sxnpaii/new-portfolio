@@ -37,7 +37,7 @@ const Post = ({ content }: { content: Posts }): JSX.Element => {
         <title>{content.title} || SXNPAII`s Universe </title>
         <meta property="og:title" content={`${content.title}`} />
         <meta property="og:description" content={`${content.description}`} />
-        <meta property="og:image" content={`${content.cover_img.url}`} />
+        <meta property="og:image" content={`${content.cover_img && content.cover_img.url}`} />
       </Head>
       <main className={` ${sass.Main}`}>
         <PageTitle
@@ -47,7 +47,9 @@ const Post = ({ content }: { content: Posts }): JSX.Element => {
         />
         {/*body*/}
         <div className={`${sass.Body}`}>
-          <img src={content.cover_img.url} className={`${sass.Img}`} />
+          {content.cover_img && (
+            <img src={content.cover_img.url} className={`${sass.Img}`} />
+          )}ff
           {/* content */}
           <Md
             markdown={content.content}

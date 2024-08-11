@@ -1,14 +1,13 @@
-
 .Posts {
-  @apply sm:columns-3 gap-3;
+  @apply columns-2 lg:columns-3 gap-3 max-[350px]:columns-1;
 }
-  .Error {
-    @apply text-center text-4xl opacity-70 my-24;
-  }
+.Error {
+  @apply text-center text-4xl opacity-70 my-24;
+}
 
 .Footer {
   @apply w-full mt-10 justify-center;
   .btn {
-    @apply px-8 ;
+    @apply px-8;
   }
 }
