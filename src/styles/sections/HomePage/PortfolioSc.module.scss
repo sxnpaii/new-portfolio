@@ -1,45 +1,25 @@
 .Portfolio {
   @apply sm:mt-32;
-  .Head{
+  .Head {
     @apply text-center mb-[60px] text-white;
     .Heading {
       @apply sm:text-6xl text-4xl;
     }
-    .Description{
-      // @apply 
-    }
-
   }
 
   .Block {
-    @apply lg:columns-3 columns-2;
+    @apply lg:columns-3 columns-1;
     .Work {
-      @apply relative transition overflow-hidden my-3 rounded-xl min-h-[400px]  cursor-pointer;
-      img {
-        @apply invisible w-full rounded;
-      }
+      @apply relative transition overflow-hidden my-4 rounded-xl h-fit  cursor-pointer  bg-opacity-20;
 
-      .hovered {
-        @apply absolute top-0 opacity-0 w-full h-full px-[15px] py-[10px] md:px-[30px] md:py-[10px] md:overflow-hidden overflow-y-scroll;
-        transition: all 330ms;
-
-        h4 {
-          @apply text-3xl mb-3
+      .Ineer {
+        @apply px-4 py-8 bg-[#252525] bg-opacity-60;
+        .ProjectTitle {
+          @apply text-3xl m-0;
         }
-
-        p {
-          @apply text-[13px] mb-10
-        }
-
         .btns {
-          @apply gap-3;
+          @apply gap-y-6 gap-x-3 mt-10 flex-wrap;
         }
-      }
-
-      &:hover .hovered {
-        @apply opacity-100;
-        background: rgba(0, 0, 0, .5);
-        font-size: 14px;
       }
     }
   }

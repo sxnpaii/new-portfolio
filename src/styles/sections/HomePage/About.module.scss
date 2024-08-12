@@ -7,11 +7,11 @@
   .Block {
     @apply md:flex-nowrap items-center sm:justify-center gap-8;
     .Text {
-      @apply lg:w-1/2;
+      @apply xl:w-1/2 max-xl:w-[670px];
     }
 
     .img {
-      @apply w-full xl:max-w-[540px] sm:max-w-[380px] sm:max-h-[805px] rounded-2xl;
+      @apply w-full xl:max-w-[540px] md:max-w-[420px] rounded-xl;
       //background: url("/About.png") no-repeat center center / cover;
     }
   }

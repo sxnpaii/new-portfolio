@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <link rel="icon" href="/personal/logo.svg" />
       </Head>
       <NextNProgress color="white" options={{ showSpinner: false }} />
-        <Component {...pageProps} />
+      <Component {...pageProps} />
     </>
   );
 }

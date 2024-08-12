@@ -14,8 +14,8 @@ const RandomPosts = ({ posts }: { posts: Posts[] }): JSX.Element => {
           Последние Посты
         </h3>
       </div>
-      <div className={`${sass.Posts} `}>
-        {posts != 0 ? (
+      <div className={`${sass.Posts}`}>
+        {posts.length != 0 ? (
           posts.map((post) => (
             <div key={post.id} className={`${sass.Post}`} data-scroll>
               {post.cover_img && (
@@ -29,9 +29,7 @@ const RandomPosts = ({ posts }: { posts: Posts[] }): JSX.Element => {
               )}
 
               <div className={`${sass.PostBody}`}>
-                <h6 className={`${sass.PostTitle} heading-text`}>
-                  {post.title}
-                </h6>
+                <b className={`${sass.PostTitle} heading-text`}>{post.title}</b>
                 <p className={`${sass.PostDescription} basic-text`}>
                   {post.description}
                 </p>

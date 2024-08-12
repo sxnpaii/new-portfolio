@@ -1,24 +1,23 @@
 .Hero {
-    @apply sm:pt-36 pt-20 w-full sm:min-h-[1000px] relative;
+  @apply sm:pt-36 pt-20 w-full sm:min-h-[1000px] relative;
 
-    .layer1 {
-        @apply relative min-h-[600px] sm:min-h-[1000px] mt-10 sm:mt-0 ;
+  .layer1 {
+    @apply relative min-h-[600px] sm:min-h-[1000px] mt-10 sm:mt-0;
 
-        .quote {
-            @apply sm:w-[55%] xl:w-[40%] w-[90%] sm:text-base text-[13px] max-[680px]:absolute max-[680px]:top-[0%] z-30;
-        }
-
-        .img {
-            @apply max-w-[550px] w-[80%] absolute opacity-70 ;
-        }
-
+    .quote {
+      @apply sm:w-[55%] xl:w-[40%] w-[90%] sm:text-base text-[13px] max-[680px]:absolute max-[680px]:top-[0%] z-30;
     }
 
-    .layer2 {
-        @apply absolute text-center w-full top-[40%] sm:top-[30%] ;
-
-        .Heading {
-            @apply w-[80%] mx-auto mb-10 md:text-8xl text-5xl;
-        }
+    .img {
+      @apply max-w-[550px] w-[80%] absolute opacity-70 rounded-xl;
     }
+  }
+
+  .layer2 {
+    @apply absolute text-center w-full top-[40%] sm:top-[30%];
+
+    .Heading {
+      @apply w-[80%] mx-auto mb-10 md:text-8xl text-5xl;
+    }
+  }
 }

@@ -13,7 +13,7 @@ const Post = ({ post, editable = false, funcs, states }): JSX.Element => {
 
       <div className={`${sass.PostBody}`}>
         <div className={`${sass.PostHeading} flexbox`}>
-          <h3 className={`${sass.PostTitle} heading-text flexbox `}>
+          <Link href={`/posts/${post.id}`} className={`${sass.PostTitle} heading-text flexbox`}>
             <div className={editable ? "flexbox gap-5" : "hidden"}>
               <button
                 onClick={() => {
@@ -24,9 +24,9 @@ const Post = ({ post, editable = false, funcs, states }): JSX.Element => {
               </button>
             </div>
             {post.title}
-          </h3>
+          </Link>
           <p className={`${sass.PostDate} basic-text`}>
-            {moment(post.published_date).fromNow()}
+            {moment(post.published_date).format("DD MMMM YYYY")}
           </p>
         </div>
         <p className={`${sass.PostDescription} basic-text`}>

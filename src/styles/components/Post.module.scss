@@ -1,15 +1,15 @@
 .Post {
-  @apply w-full max-w-[700px] mb-3 overflow-hidden h-fit transition bg-[#18181880] break-inside-avoid;
+  @apply w-full max-w-[700px] overflow-hidden h-fit transition bg-[#18181880] break-inside-avoid rounded-xl;
   .PostBody {
     @apply px-3 sm:px-5 pt-3 pb-6;
     .PostHeading {
       @apply justify-between items-center flex-wrap-reverse gap-x-3;
       .PostTitle {
-        @apply mb-2 capitalize text-base leading-5 sm:text-2xl gap-5;
+        @apply mb-2 capitalize text-base leading-5 sm:text-2xl gap-5 hover:underline;
       }
 
       .PostDate {
-        @apply text-sm max-sm:text-xs; 
+        @apply text-sm max-sm:text-[10px] opacity-80;
       }
     }
 

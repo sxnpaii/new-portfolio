@@ -1,19 +1,20 @@
 .Main {
-  @apply sm:w-[45%] mx-auto;
+  @apply max-w-[700px] mx-auto;
   .Body {
     .Img {
       @apply mx-auto mb-8 w-full;
     }
 
     .Content {
-      @apply text-lg mb-16 opacity-90 mx-auto;
+      @apply sm:text-lg mb-16 opacity-90 mx-auto text-[#ffffffe3];
     }
 
     .Footer {
-      @apply flex items-center justify-between;
+      @apply flex items-center justify-between flex-wrap;
       @apply border-t pt-5;
 
       .Tags {
+        @apply flex flex-wrap items-center mb-6; 
         .Hint {
           @apply text-xl;
         }

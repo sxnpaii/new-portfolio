@@ -8,36 +8,41 @@ export const AboutPageMdContent: string = `### Краткое описание
 **Имею опыт в**: HTML/CSS, Tailwind, Scss, JavaScript, Typescript, React, Nextjs
 **А также знаком с**:  Astro, Vue, Pinia, Bootstrap, C`;
 export const contactsLinks = [
-    {
-        name: "Телеграм",
-        link: "https://t.me/sxnpaii"
-    },
-    {
-        name: "Гитхаб",
-        link: "https://github.com/sxnpaii"
-    },
-    {
-        name: "Твиттер (Икс)",
-        link: "https://twitter.com/the_sxnpaii"
-    },
-    {
-        name: "Телетайп",
-        link: "https://teletype.in/@sxnpaii"
-    },
-    {
-        name: "Телеграм",
-        link: "https://t.me/sxnpaii_blog"
-    },
-    {
-        name: "Медиум",
-        link: "https://medium.com/@sxnpaii"
-    },
-]
+  {
+    name: "Телеграм",
+    link: "https://t.me/sxnpaii",
+  },
+  {
+    name: "Гитхаб",
+    link: "https://github.com/sxnpaii",
+  },
+  {
+    name: "ЛинкедИн",
+    link: "https://linkedin.com/in/sxnpaii",
+  },
+  {
+    name: "Твиттер (Икс)",
+    link: "https://twitter.com/the_sxnpaii",
+  },
+  {
+    name: "Телетайп",
+    link: "https://teletype.in/@sxnpaii",
+  },
+  {
+    name: "Телеграм",
+    link: "https://t.me/sxnpaii_blog",
+  },
+  {
+    name: "Медиум",
+    link: "https://medium.com/@sxnpaii",
+  },
+];
 
 export const RouteLinks = [
-    { path: "/", title: "Главная" , isPrivate: false},
-    { path: "/posts", title: "Посты", isPrivate: false },
-    { path: "/about", title: "Обо мне", isPrivate: false },
-    { path: "/contact", title: "Контакты", isPrivate: false },
-    { path: "/tags", title: "Теги", isPrivate: false },
-]
+  { path: "/", title: "Главная", isPrivate: false },
+  { path: "/posts", title: "Посты", isPrivate: false },
+  { path: "/microblog", title: "Микроблог", isPrivate: false },
+  { path: "/about", title: "Обо мне", isPrivate: false },
+  { path: "/contact", title: "Контакты", isPrivate: false },
+  { path: "/tags", title: "Теги", isPrivate: false },
+];

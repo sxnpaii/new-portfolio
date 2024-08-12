@@ -11,10 +11,15 @@ import PageTitle from "@/new-portfolio/components/PageTitle";
 import Post from "@/new-portfolio/components/Post";
 //styles
 import sass from "@/new-portfolio/styles/pages/Posts.module.scss";
+import dynamic from "next/dynamic";
+const Masonry = dynamic(() => import("react-layout-masonry"), { ssr: false });
 
 //receive data from xata
 export const getServerSideProps = async () => {
-  const records: Posts[] = await xataClientReq.db.Posts.sort("published_date", "desc").getAll();
+  const records: Posts[] = await xataClientReq.db.Posts.sort(
+    "published_date",
+    "desc"
+  ).getAll();
   //send to client
   return {
     props: {
@@ -47,7 +52,10 @@ const Posts = ({ records }: { records: Posts[] }): JSX.Element => {
         description={`Здесь будет показано все посты, находящиеся на сайте, в котором написано с максимальной творческой силой`}
       />
       {/* body */}
-      <div
+
+      <Masonry
+        gap={10}
+        columns={{ 250: 1, 370: 2, 1000: 3, 2400: 4 }}
         className={
           records.length != 0
             ? records.length <= 4
@@ -57,13 +65,15 @@ const Posts = ({ records }: { records: Posts[] }): JSX.Element => {
         }
       >
         {records.length != 0 ? (
-          records.map((post) => <Post key={post.id} post={post} />)
+          records
+            .filter((el) => el.cover_img)
+            .map((post) => <Post key={post.id} post={post} />)
         ) : (
           <p className={`${sass.Error} basic-text`}>
             Автор ещё не успел писать что-то интереснее ))
           </p>
         )}
-      </div>
+      </Masonry>
       <div className={`${sass.Footer} flexbox`}>
         <a
           href={`https://t.me/sxnpaii_blog`}

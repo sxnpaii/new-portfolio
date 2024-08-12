@@ -9,32 +9,32 @@
     }
 
     .Description {
-      @apply text-sm ;
+      @apply text-sm;
     }
   }
 
   .Posts {
-    @apply gap-5;
+    @apply gap-5 rounded-xl;
 
     .Error {
       @apply opacity-70 text-center text-4xl my-24;
     }
 
     .Post {
-      @apply sm:flex items-center flex-wrap md:flex-nowrap bg-[#18181880] backdrop-blur mb-10;
+      @apply sm:flex items-center flex-wrap md:flex-nowrap bg-[#18181880] backdrop-blur mb-10 rounded-xl gap-10;
 
       .ImgLink {
         @apply w-full min-w-[250px] min-h-[260px];
-        .Img{
+        .Img {
           @apply w-full;
         }
       }
 
       .PostBody {
-        @apply p-[25px] md:ml-[65px] w-full;
+        @apply w-full p-6;
 
         .PostTitle {
-          @apply text-5xl mb-5
+          @apply text-3xl md:text-4xl xl:text-5xl mb-5;
         }
 
         .PostDescription {
@@ -42,17 +42,17 @@
         }
 
         .PostFooter {
-          @apply justify-between items-center;
+          @apply justify-between items-center max-sm:flex-col-reverse max-sm:items-start;
 
           .Link {
             @apply text-base;
           }
 
           .TagsUl {
-            @apply list-none;
+            @apply list-none p-0;
 
             .Tag {
-              @apply hover:underline mx-2 no-underline
+              @apply hover:underline mx-1 no-underline;
             }
           }
         }
@@ -61,6 +61,6 @@
   }
 
   .Btn {
-    @apply max-w-[150px] text-center block mx-auto mt-8 no-underline
+    @apply max-w-[150px] text-center block mx-auto mt-8 no-underline;
   }
 }
