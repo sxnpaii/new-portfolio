@@ -10,15 +10,13 @@
     }
 
     .Footer {
-      @apply flex items-center justify-between flex-wrap;
-      @apply border-t pt-5;
+      @apply flex items-center justify-between flex-wrap border-t pt-5;
 
       .Tags {
-        @apply flex flex-wrap items-center mb-6; 
+        @apply flex flex-wrap items-baseline;
         .Hint {
           @apply text-xl;
         }
-
         .Tag {
           @apply mx-1.5 hover:underline;
         }

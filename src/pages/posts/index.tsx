@@ -48,8 +48,8 @@ const Posts = ({ records }: { records: Posts[] }): JSX.Element => {
         />
       </Head>
       <PageTitle
-        title={`Посты`}
-        description={`Здесь будет показано все посты, находящиеся на сайте, в котором написано с максимальной творческой силой`}
+        title={`Maqolalar`}
+        description={`Maqolalar ko'p xollarda shaxsiy fikrlar asosida. Shuningdek, hech qaysi mavzu, g'oya yoki mavkuralarga targ'ib qilmaydi.`}
       />
       {/* body */}
 

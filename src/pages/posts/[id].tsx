@@ -70,9 +70,9 @@ const Post = ({ content }: { content: Posts }): JSX.Element => {
                   </Link>
                 ))}
             </div>
-            <b className="basic-text">
+            <p className="basic-text">
               {moment(content.published_date).format("LLLL")}
-            </b>
+            </p>
           </div>
         </div>
       </main>

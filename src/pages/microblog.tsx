@@ -36,7 +36,7 @@ const Microblog = ({ records }: { records: Posts[] }) => {
           content={`Микроблог || SXNPAII's Universe 🌌`}
         />
       </Head>
-      <PageTitle title={`Микроблог`} />
+      <PageTitle title={`Qisqa fikrlar`} />
       <section
       // className={`${sass.Microblog}`}
       >

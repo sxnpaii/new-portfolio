@@ -7,7 +7,7 @@ import sass from "@/new-portfolio/styles/pages/Contact.module.scss";
 import { contactsLinks } from "../utils";
 import Head from "next/head";
 
-const contact = () => {
+const Contact = () => {
   return (
     <MainLayout>
       <Head>
@@ -15,54 +15,43 @@ const contact = () => {
       </Head>
       <PageTitle
         title="Контакты"
-        description="Аккаунты, учётные записи, контакты и соц. сети автора в одном месте. Свяжитесь если возникли какие-то вопросы или же предложения."
+        description="Основные контакты автора. Только актуальные."
       />
       <div className={`${sass.Contacts} flexbox`}>
         <ul>
-          <h4 className="heading-text">Основные контакты </h4>
-          <li className="basic-text">axurshidbek2005@gmail.com</li>
-          <li className="basic-text">+998 93 857 77 66</li>
-          <br />
-          {contactsLinks
-            .map((el) => (
-              <li key={el.link}>
-                <a href={el.link} className="basic-text" target="_blank">
-                  {el.name}
-                </a>
-              </li>
-            ))
-            .splice(0, 3)}
+          <h4 className="heading-text">Основные</h4>
+          <div className={sass.List + " w-auto"}>
+            <li>
+              <a href="mailto:axurshidbek2005@gmail.com">
+                <span>axurshidbek2005@gmail.com</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+998938577766">
+                <span>+998 93 857 77 66</span>
+              </a>
+            </li>
+          </div>
         </ul>
         <ul>
-          <h4 className="heading-text">Блоги на других платформах</h4>
-          {contactsLinks
-            .map((el) => (
-              <li key={el.link}>
-                <a href={el.link} className="basic-text" target="_blank">
-                  {el.name}
+          <h4 className="heading-text">Социальные сети</h4>
+          <div className={sass.List}>
+            {contactsLinks.map((contact) => (
+              <li>
+                <a href={contact.link} target="_black">
+                  <img
+                    src={`/icons/${contact.name.toLocaleLowerCase()}.svg`}
+                    alt={`$${contact.name} icon`}
+                  />
+                  <span>{contact.name}</span>
                 </a>
               </li>
-            ))
-            .splice(3, 3)}
-        </ul>
-        <ul>
-          <h4 className="heading-text">Другие..</h4>
-          <li className="basic-text">khurshid7766@yandex.com</li>
-          <li className="basic-text">+998 90 485 02 32</li>
-          <br />
-          {contactsLinks
-            .map((el) => (
-              <li key={el.link}>
-                <a href={el.link} className="basic-text" target="_blank">
-                  {el.name}
-                </a>
-              </li>
-            ))
-            .splice(6)}
+            ))}
+          </div>
         </ul>
       </div>
     </MainLayout>
   );
 };
 
-export default contact;
+export default Contact;

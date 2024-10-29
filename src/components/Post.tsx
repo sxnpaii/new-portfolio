@@ -1,7 +1,7 @@
 import Link from "next/link";
 import sass from "@/new-portfolio/styles/components/Post.module.scss";
 import moment from "moment";
-
+import "moment/locale/uz-latn";
 const Post = ({ post, editable = false, funcs, states }): JSX.Element => {
   return (
     <div className={`${sass.Post}`}>
@@ -13,7 +13,10 @@ const Post = ({ post, editable = false, funcs, states }): JSX.Element => {
 
       <div className={`${sass.PostBody}`}>
         <div className={`${sass.PostHeading} flexbox`}>
-          <Link href={`/posts/${post.id}`} className={`${sass.PostTitle} heading-text flexbox`}>
+          <Link
+            href={`/posts/${post.id}`}
+            className={`${sass.PostTitle} heading-text flexbox`}
+          >
             <div className={editable ? "flexbox gap-5" : "hidden"}>
               <button
                 onClick={() => {

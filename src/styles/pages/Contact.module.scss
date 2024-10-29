@@ -1,18 +1,27 @@
 .Contacts {
-    @apply mx-auto justify-between gap-5;
-    ul {
-        @apply md:max-w-[30%];
-        h4 {
-            @apply text-4xl mb-5
+  @apply mx-auto flex-col justify-center items-center gap-5;
+  h4 {
+    @apply text-3xl mb-2 text-white;
+  }
+  ul{
+    @apply w-[700px];
+  }
+  .List {
+    @apply flex justify-start items-center gap-3 ;
+    li {
+      @apply flex transition-all scale-[.97] mb-2 h-fit  overflow-hidden;
+      a {
+        @apply flex items-center gap-3 transition;
+        img {
+          @apply w-10;
         }
-        li{
-            @apply text-xl transition scale-95;
-            a{
-                @apply underline;
-            }
-            &:hover{
-                @apply scale-100;
-            }
+        span {
+          @apply text-xl font-['Inter'] text-white;
         }
+      }
+      &:hover {
+        @apply scale-100;
+      }
     }
+  }
 }
