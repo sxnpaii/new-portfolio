@@ -1,12 +1,11 @@
-export const AboutPageMdContent: string = `### Краткое описание 
-Ассаламу алейкум. Я Абдулхаев Хуршид Программный инженер и Фулл стек разработчик. Разработаю веб интерфейсы и веб приложении с использованием языков программирования JavaScript и TypeScript, иногда пытаюсь улучшить свои навыки на  языках программирования C. Кроме этих, имею навыки в создании архитектуры и системного дизайна различных приложений в том числе веб и мобильных приложений. Учился в трёх местах, специализирующихся на направлении Веб разработки и ИТ направлений. Они:
-- IT center Zaamin
-- Teamit Academy
-- Astrum IT academy 
+export const AboutPageMdContent: string = `Mening ismim Abdulxayev Xurshid, men Dasturchiman Internet va bir nechta ijtimoiy tarmoqlarda sxnpaii taxallusi bilan mavjudman. O'zbekistonning Jizzax viloyati, Zomin tumanida tug'ilib o'sganman. Xozir qayerdaligimni bilsangiz demak baxtli insonsiz ) 
+2021-chi yil Dekabr oyidan beri Dasturlashni o'rganib kelaman. Asosan ishlab chiqish (development)da kod yozaman. Startup yoki shunga o'xshash foydalanuvchisi mavhum bo'lgan hamda riskga asoslangan loyihalarda qatnashmaslikga xarakat qilaman. 
+Fikrlarimni va hayotimni yozma bayon etishni, muammo va buglarni chizib xal qilishni ma'qul ko'raman va yaxshi ko'raman. Hobbiyim nimadirni yozish, tasvirlash va fikr bildirish. 
+Ba'zida syujetli open world video o'yinlar o'ynayman eng yoqadiganlari Cyberpunk 2077 va Ghost of Tsushima. Shaxsiy rivojanish va psixologiya, dramatik romanlar yoki hikoyalar, avtobiografiya janridagi kitoblarni o'qib turaman. Yapon tili, ta'rixi, qadriyatlari va muhandisligini yoqtiraman va o'rganaman. O'zbek tili va o'zbek millati xaqida positiv fikr o'yg'otishga xarakat qilaman. 
 
-А также успешно закончил буткемп по созданию и менеджмента ИТ Продукта. Сейчас я продолжаю своё обучение в академии Аструм в направлении Фулл стека и в добавок изучаю Японский язык. Как вам известно я пока что в процессе обучения. 
-**Имею опыт в**: HTML/CSS, Tailwind, Scss, JavaScript, Typescript, React, Nextjs
-**А также знаком с**:  Astro, Vue, Pinia, Bootstrap, C`;
+Agar men haqimda ko'proq bilmoqchi bo'lsangiz yozuvlarni o'qib ko'ring, yoqsa shaxsiy profillarda yoki kommentda fikringizni bildiring. Va albatta bu uchun sizni majburlash niyatim yo'q, xolisona amal o'zingizdan bo'lsin )
+
+19-Mart 2025-yil, 04:02.`;
 export const contactsLinks = [
   {
     name: "Telegram",
@@ -24,9 +23,9 @@ export const contactsLinks = [
 
 export const RouteLinks = [
   { path: "/", title: "Asosiy", isPrivate: false },
-  { path: "/posts", title: "Maqolalar", isPrivate: false },
+  { path: "/posts", title: "Yozuvlar", isPrivate: false },
   { path: "/microblog", title: "Qisqa fikrlar", isPrivate: false },
   { path: "/about", title: "Men haqimda", isPrivate: false },
   { path: "/contact", title: "Kontaktlar", isPrivate: false },
-  { path: "/tags", title: "Teglar", isPrivate: false },
+  { path: "/tags", title: "Mavzular", isPrivate: false },
 ];
