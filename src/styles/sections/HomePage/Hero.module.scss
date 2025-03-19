@@ -2,14 +2,14 @@
   @apply sm:pt-36 pt-20 w-full sm:min-h-[1000px] relative;
 
   .layer1 {
-    @apply relative min-h-[600px] sm:min-h-[1000px] mt-10 sm:mt-0;
+    @apply relative min-h-[600px] sm:min-h-[1100px] mt-10 sm:mt-0;
 
     .quote {
       @apply sm:w-[55%] xl:w-[40%] w-[90%] sm:text-base text-[13px] max-[680px]:absolute max-[680px]:top-[0%] z-30;
     }
 
     .img {
-      @apply max-w-[550px] w-[80%] absolute opacity-70 rounded-xl;
+      @apply max-w-[600px] w-[80%] absolute opacity-70 rounded-xl;
     }
   }
 

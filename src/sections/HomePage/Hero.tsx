@@ -17,14 +17,14 @@ const Hero = () => {
         <img
           src="personal/About.jpg"
           alt=""
-          className={`${sass.img} top-0 -right-[10%] -z-50 `}
+          className={`${sass.img} top-0 -right-[10%] -z-50`}
           data-scroll
           data-scroll-speed="1"
           data-scroll-delay="1"
           data-scroll-direction="horizontal"
         />
         <img
-          src="/personal/IMG_20240104_231130_711.jpg"
+          src="/personal/IMG_3225.JPG"
           alt=""
           className={`${sass.img} bottom-0 left-0 -z-50`}
           data-scroll
@@ -35,12 +35,12 @@ const Hero = () => {
       </div>
       <div className={`${sass.layer2} `} data-scroll data-scroll-speed="-5">
         <h1 className={`${sass.Heading} heading-text`} data-scroll>
-          <span data-scroll>Привет</span>
+          <span data-scroll>ようこそ！</span>
           <br />
-          <span>Мир!</span>
+          <span>Xush kelibsiz!</span>
         </h1>
         <Link href={`/about`} className={`${sass.Btn} inline-block btn`}>
-          Я спайдрмен фцк
+        E rahmat )
         </Link>
       </div>
     </section>

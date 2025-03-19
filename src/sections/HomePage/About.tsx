@@ -28,7 +28,7 @@ const About = () => {
             markdown={AboutPageMdContent.substring(0, 780)}
           />
           <Link href={`/about`} className={`${sass.Btn} btn`}>
-            Продолжение..
+            Davomi qani !?
           </Link>
         </div>
 
