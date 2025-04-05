@@ -12,7 +12,7 @@ const filterTags = (posts: Posts[]) => {
   const filteredTags = new Set();
   posts.forEach((post) => post.tags.forEach((tag) => filteredTags.add(tag)));
   return [...filteredTags];
-}; 
+};
 
 export const getServerSideProps = async () => {
   const posts: Posts[] = await xataClientReq.db.Posts.select(["tags"]).getAll();
@@ -26,21 +26,21 @@ const Tags = ({ tags }: { tags: string[] }) => {
   return (
     <MainLayout>
       <Head>
-        <title>Все теги || SXNPAII's Universe 🌌</title>
+        <title>Mavzular || SXNPAII's Universe 🌌</title>
       </Head>
-      <PageTitle title={`Теги`} />
+      <PageTitle title={`Mavzular`} />
       {/*body*/}
       <ul className={tags.length != 0 ? `${sass.Tags} ` : ""}>
         {tags.length != 0 ? (
           tags.map((tag) => (
             <li key={tag} className={`flexbox flex-col text-center`}>
-                <Link
-                  key={tag}
-                  href={`/tags/${tag}`}
-                  className={`${sass.Tag} btn-primary `}
-                >
-                  #{tag}
-                </Link>
+              <Link
+                key={tag}
+                href={`/tags/${tag}`}
+                className={`${sass.Tag} btn-primary `}
+              >
+                #{tag}
+              </Link>
             </li>
           ))
         ) : (

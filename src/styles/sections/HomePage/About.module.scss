@@ -5,13 +5,13 @@
   }
 
   .Block {
-    @apply md:flex-nowrap items-center sm:justify-center gap-8;
+    @apply lg:flex-nowrap items-center sm:justify-center gap-8;
     .Text {
       @apply xl:w-1/2 max-xl:w-[670px];
     }
 
     .img {
-      @apply w-full xl:max-w-[540px] md:max-w-[420px] rounded-xl;
+      @apply w-full xl:max-w-[540px] lg:max-w-[420px] rounded-xl;
       //background: url("/About.png") no-repeat center center / cover;
     }
   }

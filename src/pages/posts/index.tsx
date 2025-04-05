@@ -37,19 +37,19 @@ const Posts = ({ records }: { records: Posts[] }): JSX.Element => {
   return (
     <MainLayout>
       <Head>
-        <title>Все Посты || SXNPAII's Universe 🌌</title>
+        <title>Barcha Yozuvlar || SXNPAII's Universe 🌌</title>
         <meta
           property="og:title"
-          content="Все Посты || SXNPAII's Universe 🌌"
+          content="Barcha Yozuvlar || SXNPAII's Universe 🌌"
         />
         <meta
           property="og:description"
-          content="Порфолио и Блог Front-end разработчика под ником SXNPAII"
+          content="Sxnpaii.uz saytidagi barcha yozuvlar"
         />
       </Head>
       <PageTitle
-        title={`Maqolalar`}
-        description={`Maqolalar ko'p xollarda shaxsiy fikrlar asosida. Shuningdek, hech qaysi mavzu, g'oya yoki mavkuralarga targ'ib qilmaydi.`}
+        title={`Yozuvlar`}
+        description={`Yozuvlar shaxsiy fikrlar asosida. Asosan yozuv mavzusiga shaxsiy ta'riflov. Hech qaysi mavzu va mavkuraviy go'yalarga jalb etmaydi.`}
       />
       {/* body */}
 
@@ -79,8 +79,8 @@ const Posts = ({ records }: { records: Posts[] }): JSX.Element => {
           href={`https://t.me/sxnpaii_blog`}
           className={`${sass.btn} btn flexbox gap-3`}
         >
-          Больше в{" "}
-          <img src="/icons/telegram.svg" width={23} height={23} alt="" /> канале
+          Qogani <img src="/icons/telegram.svg" width={23} height={23} alt="" />{" "}
+          kanalda
         </a>
       </div>
     </MainLayout>

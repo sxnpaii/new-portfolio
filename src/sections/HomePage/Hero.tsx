@@ -11,8 +11,7 @@ const Hero = () => {
           data-scroll
           data-scroll-speed="-1"
         >
-          Привет (Ассаламу алейкум)! Я Абдулхаев Хуршид, Фулл Стек Разработчик, типо
-          писатель, пытающийся понять и объяснять о жизни и разработки. Итак ..
+       Assalomu alaykum! Men Abdulxayev Xurshid, Full Stack dasturchiman. Dasturlash va Yapon tilini o'rganaman 
         </h6>
         <img
           src="personal/About.jpg"
@@ -39,7 +38,7 @@ const Hero = () => {
           <br />
           <span>Xush kelibsiz!</span>
         </h1>
-        <Link href={`/about`} className={`${sass.Btn} inline-block btn`}>
+        <Link href={`/greetings`} className={`${sass.Btn} inline-block btn`}>
         E rahmat )
         </Link>
       </div>

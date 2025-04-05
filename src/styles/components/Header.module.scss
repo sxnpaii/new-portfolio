@@ -8,10 +8,10 @@
   }
 
   .Ul {
-    @apply md:flex-row flex-col justify-between items-center gap-5 md:m-0 list-none;
+    @apply lg:flex-row flex-col justify-between items-center gap-5 md:m-0 list-none;
     margin: 0;
     padding: 0;
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       transition: all 330ms;
       height: 0;
       overflow: hidden;
@@ -23,19 +23,19 @@
     }
   }
   .active {
-    animation: fade-out 530ms ease-out;
+    animation: fade-in 700ms ease-out;
     transition: all 330ms;
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       display: flex;
-      margin: 2em 0 1em 0;
-      height: 70vh;
+      margin: 2em 0 2em 0;
+      height: 85vh;
       .ListItem {
-        @apply text-xl tracking-widest;
+        @apply text-2xl tracking-widest ;
       }
     }
   }
 }
-@keyframes fade-out {
+@keyframes fade-in {
   from {
     opacity: 0;
   }

@@ -24,7 +24,9 @@ export const getServerSideProps = async ({ params }) => {
     props: {
       content: {
         ...post,
-        published_date: post.published_date?.toDateString(),
+        published_date: moment(post.published_date.toDateString()).format(
+          "LLLL"
+        ),
       },
     },
   };
@@ -37,7 +39,10 @@ const Post = ({ content }: { content: Posts }): JSX.Element => {
         <title>{content.title} || SXNPAII`s Universe </title>
         <meta property="og:title" content={`${content.title}`} />
         <meta property="og:description" content={`${content.description}`} />
-        <meta property="og:image" content={`${content.cover_img && content.cover_img.url}`} />
+        <meta
+          property="og:image"
+          content={`${content.cover_img && content.cover_img.url}`}
+        />
       </Head>
       <main className={` ${sass.Main}`}>
         <PageTitle
@@ -58,7 +63,7 @@ const Post = ({ content }: { content: Posts }): JSX.Element => {
           {/* footer */}
           <div className={sass.Footer}>
             <div className={`${sass.Tags}`}>
-              <b className={`heading-text ${sass.Hint}`}>Теги:</b>
+              <b className={`heading-text ${sass.Hint}`}>Mavzular:</b>
               {content.tags &&
                 content.tags.map((tag) => (
                   <Link
@@ -70,9 +75,7 @@ const Post = ({ content }: { content: Posts }): JSX.Element => {
                   </Link>
                 ))}
             </div>
-            <p className="basic-text">
-              {moment(content.published_date).format("LLLL")}
-            </p>
+            <p className="basic-text">{content.published_date}</p>
           </div>
         </div>
       </main>

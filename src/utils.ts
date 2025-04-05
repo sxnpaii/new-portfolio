@@ -6,6 +6,13 @@ Ba'zida syujetli open world video o'yinlar o'ynayman eng yoqadiganlari Cyberpunk
 Agar men haqimda ko'proq bilmoqchi bo'lsangiz yozuvlarni o'qib ko'ring, yoqsa shaxsiy profillarda yoki kommentda fikringizni bildiring. Va albatta bu uchun sizni majburlash niyatim yo'q, xolisona amal o'zingizdan bo'lsin )
 
 19-Mart 2025-yil, 04:02.`;
+
+export const GreetingsPageContent:string = `Assalomu aleykum! Mo'jazgina makonimga xush kelibshiz!<br/>
+Ushbu saytda yozuvlar yoki loyihalarni o'qib, o'zingiz uchun foydali bilimlar va fikrlarni olishingizni tilayman.  <br/>
+
+Agar yoqsa yaqinlarga ulashing. <span style="text-decoration:underline"> Sabr ila yozuvlarni oxirigacha o'qishingizni so'rab qolaman)<span/>
+
+`
 export const contactsLinks = [
   {
     name: "Telegram",

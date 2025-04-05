@@ -35,12 +35,14 @@ const Tag = ({
   return (
     <MainLayout>
       <Head>
-        <title>Посты по тегу {query.tags} || SXNPAII's Universe 🌌</title>
+        <title>
+          {query.tags} mavzusi bo'yicha Yozuvlar || SXNPAII's Universe 🌌
+        </title>
       </Head>
       <PageTitle
-        title={`По тегу "${query.tags}" найдены ${
+        title={`"${query.tags}" mavzusi bo'yicha Yozuvlar ${
           PostsWithTags.map((post) => post.tags).length
-        } посты`}
+        } ta`}
       />
       {/*body*/}
       <div className={`${sass.Posts}`}>

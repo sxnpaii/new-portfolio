@@ -14,17 +14,17 @@
   }
 
   .Posts {
-    @apply gap-5 rounded-xl;
+    @apply grid md:grid-cols-2 xl:grid-cols-3 gap-x-5;
 
     .Error {
       @apply opacity-70 text-center text-4xl my-24;
     }
 
     .Post {
-      @apply sm:flex items-center flex-wrap md:flex-nowrap bg-[#18181880] backdrop-blur mb-10 rounded-xl gap-10;
+      @apply items-center flex-wrap bg-[#18181880] backdrop-blur mb-10 rounded-xl gap-10 overflow-hidden h-fit;
 
       .ImgLink {
-        @apply w-full min-w-[250px] min-h-[260px];
+        @apply max-w-[250px];
         .Img {
           @apply w-full;
         }
@@ -34,7 +34,7 @@
         @apply w-full p-6;
 
         .PostTitle {
-          @apply text-3xl md:text-4xl xl:text-5xl mb-5;
+          @apply text-3xl md:text-4xl inline-block mb-4;
         }
 
         .PostDescription {
