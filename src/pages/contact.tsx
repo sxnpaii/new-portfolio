@@ -11,16 +11,16 @@ const Contact = () => {
   return (
     <MainLayout>
       <Head>
-        <title>Контакты || SXNPAII's Universe 🌌</title>
+        <title>Kontaktlar || SXNPAII's Universe 🌌</title>
       </Head>
       <PageTitle
-        title="Контакты"
-        description="Основные контакты автора. Только актуальные."
+        title="Kontaktlar"
+        description="Asosiy kontaktlarim. Faqat faollari."
       />
       <div className={`${sass.Contacts} flexbox`}>
         <ul>
-          <h4 className="heading-text">Основные</h4>
-          <div className={sass.List + " w-auto"}>
+          <h4 className="heading-text">Asosiy</h4>
+          <div className={`${sass.List} w-auto`}>
             <li>
               <a href="mailto:axurshidbek2005@gmail.com">
                 <span>axurshidbek2005@gmail.com</span>
@@ -34,7 +34,7 @@ const Contact = () => {
           </div>
         </ul>
         <ul>
-          <h4 className="heading-text">Социальные сети</h4>
+          <h4 className="heading-text">Ijtimoiy tarmoqlar</h4>
           <div className={sass.List}>
             {contactsLinks.map((contact) => (
               <li>

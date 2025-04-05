@@ -11,15 +11,14 @@ const PortfolioSc = ({ records }: { records: Portfolio[] }): JSX.Element => {
           data-scroll
           data-scroll-speed="1"
         >
-          Портфолио
+          Loyihalar
         </h2>
         <p
           className={`${sass.Description} basic-text`}
           data-scroll
           data-scroll-speed="1.2"
         >
-          Эти примеры всего лишь "куски" моей работы, остальное вы можете
-          увидеть на <a href="https://github.com/sxnpaii">GitHub</a> профиле
+          Ko'rib turganingiz, qilgan ishlarimning parchasi holos. Hammasini <a href="https://github.com/sxnpaii">GitHub</a>da ko'rishingiz mumkin
         </p>
       </div>
       <div className={`${sass.Block}`}>
@@ -38,7 +37,7 @@ const PortfolioSc = ({ records }: { records: Portfolio[] }): JSX.Element => {
                 <h4 className={`${sass.ProjectTitle} heading-text `}>
                   {record.project}
                 </h4>
-                <Md className={`basic-text`} markdown={record.description} />
+                <Md className={`basic-text text-lg`} markdown={record.description} />
                 <div className={`${sass.btns} flexbox`}>
                   {record.gh_repo !== null && (
                     <button>
@@ -46,7 +45,7 @@ const PortfolioSc = ({ records }: { records: Portfolio[] }): JSX.Element => {
                         className={`btn text-sm md:text-base`}
                         href={record.gh_repo}
                       >
-                        Github Repo
+                        Github
                       </a>
                     </button>
                   )}
@@ -57,7 +56,7 @@ const PortfolioSc = ({ records }: { records: Portfolio[] }): JSX.Element => {
                         className={`btn text-sm md:text-base `}
                         href={record.file_in_tg}
                       >
-                        Архив в Телеграме
+                        Telegram
                       </a>
                     </button>
                   )}
@@ -67,7 +66,7 @@ const PortfolioSc = ({ records }: { records: Portfolio[] }): JSX.Element => {
                         className={`btn text-sm md:text-base`}
                         href={record.project_url}
                       >
-                        Сам Проект
+                        Loyiha havolasi
                       </a>
                     </button>
                   )}

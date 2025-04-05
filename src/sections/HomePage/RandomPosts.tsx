@@ -11,7 +11,7 @@ const RandomPosts = ({ posts }: { posts: Posts[] }): JSX.Element => {
           data-scroll
           data-scroll-speed="1.5"
         >
-          Последние Посты
+          Oxirgi Yozuvlar
         </h3>
       </div>
       <div className={`${sass.Posts}`}>
@@ -38,7 +38,7 @@ const RandomPosts = ({ posts }: { posts: Posts[] }): JSX.Element => {
                     href={`/posts/${post.id}`}
                     className={`${sass.Link} btn`}
                   >
-                    Читать
+                    O'qish
                   </Link>
                   <ul className={`${sass.TagsUl} flexbox`}>
                     {post.tags.map((tag) => (
@@ -63,7 +63,7 @@ const RandomPosts = ({ posts }: { posts: Posts[] }): JSX.Element => {
         )}
       </div>
       <Link href={`/posts`} className={`${sass.Btn} btn`}>
-        Все Посты
+        Hammasi 
       </Link>
     </section>
   );

@@ -6,15 +6,15 @@ import sass from "@/new-portfolio/styles/components/Header.module.scss";
 
 const Header = (): JSX.Element => {
   return (
-    <header className={`fixed w-full left-0 md:flex ${sass.Header}`}>
+    <header className={`fixed w-full left-0 lg:flex ${sass.Header}`}>
       <div className={`${sass.logo} flexbox sm:items-center justify-between`}>
         <Link href={`/`} className={` ${sass.Brand} heading-text`}>
           SXNPAII
         </Link>
         <button
-          className="md:hidden"
+          className="lg:hidden"
           onClick={() => {
-            document.querySelector(`ul`)?.classList.toggle(`${sass.active}`);
+            document.querySelector(`ul`)?.classList.toggle(sass.active);
           }}
         >
           <svg

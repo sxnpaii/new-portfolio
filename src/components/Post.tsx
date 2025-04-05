@@ -37,7 +37,7 @@ const Post = ({ post, editable = false, funcs, states }): JSX.Element => {
         </p>
         <div className={`${sass.PostFooter} flexbox`}>
           <Link href={`/posts/${post.id}`} className={` ${sass.PostLink} btn`}>
-            Read More
+            To'liq o'qish
           </Link>
           <div className={`${sass.Tags} flexbox gap-2`}>
             {post.tags.map((tag) => (

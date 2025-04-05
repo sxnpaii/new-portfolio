@@ -15,16 +15,12 @@ const About = () => {
         data-scroll
         data-scroll-speed="1.5"
       >
-        Обо мне
+        Men haqimda
       </h2>
       <div className={`${sass.Block} flexbox `} data-scroll>
-        <div
-          className={`${sass.Text} `}
-          data-scroll
-          data-scroll-speed="4"
-        >
+        <div className={`${sass.Text}`} data-scroll data-scroll-speed="4">
           <Md
-            className={`basic-text mb-10`}
+            className={`basic-text text-lg mb-10`}
             markdown={AboutPageMdContent.substring(0, 780)}
           />
           <Link href={`/about`} className={`${sass.Btn} btn`}>

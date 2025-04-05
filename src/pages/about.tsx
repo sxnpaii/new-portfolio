@@ -12,10 +12,10 @@ const About = (): JSX.Element => {
   return (
     <MainLayout>
       <Head>
-        <title>Обо мне || SXNPAII's Universe 🌌</title>
+        <title>Men haqimda || SXNPAII's Universe 🌌</title>
         <meta
           property="og:title"
-          content={`Обо мне || SXNPAII's Universe 🌌`}
+          content={`Men haqimda || SXNPAII's Universe 🌌`}
         />
         <meta property="og:image" content={`/personal/AboutPageImg.jpg`} />
       </Head>
