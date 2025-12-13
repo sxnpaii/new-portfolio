@@ -1,7 +1,7 @@
 // react next modules
 import Head from "next/head";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { useRef, useState, type JSX } from "react";
 //xata
 import { Portfolio, Posts } from "@/new-portfolio/xata/xata";
 import { xataClientReq } from "../xata/xataRequest";
@@ -46,7 +46,7 @@ export default function Home({
   records: Portfolio[];
   posts: Posts[];
 }): JSX.Element {
-  const containerRef = useRef();
+  const containerRef = useRef(undefined);
 
   return (
     <LocomotiveScrollProvider

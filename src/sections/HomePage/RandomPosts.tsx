@@ -2,6 +2,8 @@ import sass from "@/new-portfolio/styles/sections/HomePage/RandomPosts.module.sc
 import { Posts } from "@/new-portfolio/xata/xata";
 import Link from "next/link";
 
+import type { JSX } from "react";
+
 const RandomPosts = ({ posts }: { posts: Posts[] }): JSX.Element => {
   return (
     <section className={`${sass.RandomPosts}`} data-scroll-container>

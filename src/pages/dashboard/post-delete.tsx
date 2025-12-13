@@ -44,8 +44,7 @@ const PostDelete = ({ posts }: { posts: Posts[] }) => {
           ))
         ) : (
           <p className={`basic-text text-center text-4xl opacity-70 my-24`}>
-            {" "}
-            // Нету постов для удаления{" "}
+            Нету постов для удаления
           </p>
         )}
       </div>

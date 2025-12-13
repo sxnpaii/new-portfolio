@@ -1,5 +1,7 @@
 import sass from "@/new-portfolio/styles/components/Footer.module.scss";
 
+import type { JSX } from "react";
+
 const Footer = (): JSX.Element => {
   return (
     <footer className={`${sass.Footer}`}>

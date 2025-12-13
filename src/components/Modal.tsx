@@ -7,7 +7,7 @@ const Modal = ({
   message,
 }: {
   states: any;
-  func: (e?: any) => void;
+  func?: (e?: any) => void;
   message?: string;
 }) => {
   return (

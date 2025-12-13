@@ -1,5 +1,7 @@
 import sass from "@/new-portfolio/styles/components/PageTitle.module.scss";
 
+import type { JSX } from "react";
+
 const PageTitle = ({
   title,
   description = "",

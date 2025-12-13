@@ -1,5 +1,5 @@
 //react & next modules/packages/hooks/components
-import { useState } from "react";
+import { useState, type JSX } from "react";
 // xata
 import { xataClientReq } from "@/new-portfolio/xata/xataRequest";
 //components

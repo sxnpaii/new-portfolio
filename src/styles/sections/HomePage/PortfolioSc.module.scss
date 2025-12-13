@@ -10,7 +10,7 @@
   .Block {
     @apply lg:columns-3 columns-1;
     .Work {
-      @apply relative transition overflow-hidden my-4 rounded-xl h-fit  cursor-pointer  bg-opacity-20;
+      @apply relative transition overflow-hidden my-4 rounded-xl h-fit  cursor-pointer bg-opacity-20;
 
       .Ineer {
         @apply px-4 py-8 bg-[#252525] bg-opacity-60;
@@ -18,7 +18,7 @@
           @apply text-3xl m-0;
         }
         .btns {
-          @apply gap-y-6 gap-x-3 mt-10 flex-wrap;
+          @apply gap-y-6 gap-x-3 mt-4 flex-wrap;
         }
       }
     }

@@ -2,12 +2,14 @@ import Link from "next/link";
 import sass from "@/new-portfolio/styles/components/Post.module.scss";
 import moment from "moment";
 import "moment/locale/uz-latn";
+import type { JSX } from "react";
+import Image from "next/image";
 const Post = ({ post, editable = false, funcs, states }): JSX.Element => {
   return (
     <div className={`${sass.Post}`}>
       {post.cover_img && (
         <Link href={`/posts/${post.id}`}>
-          <img src={post.cover_img.url} alt={post.cover_img.name} />
+          <Image src={post.cover_img.url} alt={post.cover_img.name} />
         </Link>
       )}
 
@@ -23,7 +25,7 @@ const Post = ({ post, editable = false, funcs, states }): JSX.Element => {
                   states.setModal(true), funcs.remove(post);
                 }}
               >
-                <img src="/icons/delete.svg" alt="" width={20} />
+                <Image src="/icons/delete.svg" alt="" width={20} />
               </button>
             </div>
             {post.title}

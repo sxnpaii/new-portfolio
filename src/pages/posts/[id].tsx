@@ -12,6 +12,7 @@ import PageTitle from "@/new-portfolio/components/PageTitle";
 import sass from "@/new-portfolio/styles/pages/Post.module.scss";
 import { styles } from "@/new-portfolio/styles/Basics";
 import moment from "moment";
+import type { JSX } from "react";
 //data fetching
 export const getServerSideProps = async ({ params }) => {
   const post: Posts[] = await xataClientReq.db.Posts.read(`${params.id}`);
