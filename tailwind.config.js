@@ -1,11 +1,9 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-    content: [
-        "./src/**/*.{ts,tsx}"
-    ],
-    theme: {
-        extend: {},
-    },
-    plugins: [],
-}
-
+const twConfig = {
+  content: ["./src/**/*.{ts,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+export default twConfig;

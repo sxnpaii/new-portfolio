@@ -27,11 +27,12 @@ const About = () => {
             Davomi qani !?
           </Link>
         </div>
-
+        {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src="/personal/IMG_20240713_201036_180.jpg"
           className={`${sass.img}`}
           data-scroll
+          alt=""
         />
       </div>
       <style scoped jsx>

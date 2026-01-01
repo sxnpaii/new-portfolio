@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
 // styles
 import sass from "@/new-portfolio/styles/sections/HomePage/Hero.module.scss";
@@ -11,7 +12,7 @@ const Hero = () => {
           data-scroll
           data-scroll-speed="-1"
         >
-       Assalomu alaykum! Men Abdulxayev Xurshid, Full Stack dasturchiman. Dasturlash va Yapon tilini o'rganaman 
+          {`Assalomu alaykum! Men Abdulxayev Xurshid, Full Stack dasturchiman. Dasturlash va Yapon tilini o'rganaman`}
         </h6>
         <img
           src="personal/About.jpg"
@@ -39,7 +40,7 @@ const Hero = () => {
           <span>Xush kelibsiz!</span>
         </h1>
         <Link href={`/greetings`} className={`${sass.Btn} inline-block btn`}>
-        E rahmat )
+          E rahmat )
         </Link>
       </div>
     </section>

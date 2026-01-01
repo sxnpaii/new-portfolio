@@ -1,5 +1,4 @@
 import sass from "@/new-portfolio/styles/components/Modal.module.scss";
-import React from "react";
 
 const Modal = ({
   states,
