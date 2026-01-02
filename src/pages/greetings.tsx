@@ -11,14 +11,15 @@ const Greetings = () => {
         <title>Xush kelibsiz! || SXNPAII's Universe 🌌</title>
       </Head>
       <main className="flex flex-col items-center h-[75vh] justify-center gap-y-4">
-      <Md markdown={GreetingsPageContent} className="text-white text-2xl text-center flex flex-col justify-center" />
+        <Md
+          markdown={GreetingsPageContent}
+          className="text-white text-2xl text-center flex flex-col justify-center"
+        />
 
-
-      <Link href={"/"} className="btn inline-block font-bold">はい</Link>
+        <Link href={"/"} className="btn inline-block font-bold">
+          はい
+        </Link>
       </main>
-
-
-
     </MainLayout>
   );
 };

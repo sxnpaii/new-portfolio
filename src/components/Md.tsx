@@ -1,3 +1,5 @@
+import { ChildProcess } from "node:child_process";
+import { ReactNode } from "react";
 import { Remarkable } from "remarkable";
 
 const md = new Remarkable("full", {
@@ -13,14 +15,18 @@ function renderMarkdownToHTML(markdown: string) {
 export default function Md({
   markdown,
   className,
+  children,
 }: {
   markdown?: string;
+  children?: ReactNode;
   className?: string;
 }) {
   const markup = markdown ? renderMarkdownToHTML(markdown) : undefined;
   return (
     <>
-      <div dangerouslySetInnerHTML={markup} className={className} />
+      <div dangerouslySetInnerHTML={markup} className={className}>
+        {children}
+      </div>
     </>
   );
 }

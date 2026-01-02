@@ -5,7 +5,23 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
+    qualities: [75, 95, 100],
+    remotePatterns: [
+      new URL(`https://raw.githubusercontent.com/sxnpaii/**`),
+
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
+      },
+       {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+        {
+        protocol: "https",
+        hostname: "*.xata.sh",
+      },
+    ],
   },
 };
 

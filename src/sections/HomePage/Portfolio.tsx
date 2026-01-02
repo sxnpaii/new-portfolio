@@ -42,8 +42,8 @@ const PortfolioSc = ({ records }: { records: Portfolio[] }): ReactNode => {
                     src={record.source}
                     alt=""
                     className="absolute top-0 left-0 -z-10 w-full h-auto"
-                    width={0}
-                    height={0}
+                    width={500}
+                    height={500}
                   />
                 )}
                 <div className={`${sass.Ineer} relative`}>

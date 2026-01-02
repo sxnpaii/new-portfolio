@@ -8,9 +8,9 @@ import { Posts } from "../xata/xata";
 
 type Props = {
   post: Posts;
-  editable: boolean;
-  funcs: unknown;
-  states: unknown;
+  editable?: boolean;
+  funcs?: unknown;
+  states?: unknown;
 };
 
 const Post = ({
@@ -20,13 +20,15 @@ const Post = ({
   states,
 }: Props): JSX.Element => {
   return (
-    <div className={`${sass.Post}`}>
+    <div className={`${sass.Post} group`}>
       {post.cover_img && (
-        <Link href={`/posts/${post.id}`}>
+        <Link href={`/posts/${post.id}`} className="overflow-hidden!">
           <Image
+            className="w-full transition"
             src={post.cover_img.url}
             alt={post.cover_img.name}
-            width={0}
+            quality={95}
+            width={1000}
             height={0}
           />
         </Link>

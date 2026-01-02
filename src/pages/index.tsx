@@ -18,7 +18,7 @@ import RandomPosts from "@/new-portfolio/sections/HomePage/RandomPosts";
 
 // data from xata db
 export const getServerSideProps = async () => {
-  const records: Portfolio[] = await xataClientReq.db.Portfolio.getAll();
+  const records: Portfolio[] = await xataClientReq.db.Portfolio.getMany();
   const posts = await xataClientReq.db.Posts.sort(
     "published_date",
     "desc"
@@ -74,7 +74,7 @@ export default function Home({
         <MainLayout>
           <Hero />
           <About />
-          <PortfolioSc records={records} />
+          {/* <PortfolioSc records={records} /> */}
           <RandomPosts posts={posts} />
           <Footer />
         </MainLayout>

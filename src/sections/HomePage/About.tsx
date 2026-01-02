@@ -6,6 +6,7 @@ import sass from "@/new-portfolio/styles/sections/HomePage/About.module.scss";
 import { styles } from "@/new-portfolio/styles/Basics";
 // utils
 import { AboutPageMdContent } from "@/new-portfolio/utils";
+import Image from "next/image";
 
 const About = () => {
   return (
@@ -27,12 +28,14 @@ const About = () => {
             Davomi qani !?
           </Link>
         </div>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
+        <Image
           src="/personal/IMG_20240713_201036_180.jpg"
           className={`${sass.img}`}
           data-scroll
           alt=""
+          width={1000}
+          height={0}
+          priority
         />
       </div>
       <style scoped jsx>

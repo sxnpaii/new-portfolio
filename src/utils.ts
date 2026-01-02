@@ -34,5 +34,5 @@ export const RouteLinks = [
   { path: "/microblog", title: "Qisqa fikrlar", isPrivate: false },
   { path: "/about", title: "Men haqimda", isPrivate: false },
   { path: "/contact", title: "Kontaktlar", isPrivate: false },
-  { path: "/tags", title: "Mavzular", isPrivate: false },
+  { path: "/tags", title: "Teglar", isPrivate: false },
 ];
