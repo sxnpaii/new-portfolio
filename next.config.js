@@ -1,12 +1,28 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true,
   typescript: {
     ignoreBuildErrors: true,
   },
-  eslint:{
-    ignoreDuringBuilds: true
-  },
-  reactStrictMode: false
-}
+  images: {
+    qualities: [75, 95, 100],
+    remotePatterns: [
+      new URL(`https://raw.githubusercontent.com/sxnpaii/**`),
 
-module.exports = nextConfig;
+      {
+        protocol: "https",
+        hostname: "images.pexels.com",
+      },
+       {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+        {
+        protocol: "https",
+        hostname: "*.xata.sh",
+      },
+    ],
+  },
+};
+
+export default nextConfig;

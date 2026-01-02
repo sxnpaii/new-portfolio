@@ -2,6 +2,8 @@ import sass from "@/new-portfolio/styles/sections/HomePage/RandomPosts.module.sc
 import { Posts } from "@/new-portfolio/xata/xata";
 import Link from "next/link";
 
+import type { JSX } from "react";
+
 const RandomPosts = ({ posts }: { posts: Posts[] }): JSX.Element => {
   return (
     <section className={`${sass.RandomPosts}`} data-scroll-container>
@@ -20,6 +22,7 @@ const RandomPosts = ({ posts }: { posts: Posts[] }): JSX.Element => {
             <div key={post.id} className={`${sass.Post}`} data-scroll>
               {post.cover_img && (
                 <Link href={`/posts/${post.id}`} className={`${sass.ImgLink}`}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={post.cover_img.url}
                     alt=""
@@ -38,19 +41,20 @@ const RandomPosts = ({ posts }: { posts: Posts[] }): JSX.Element => {
                     href={`/posts/${post.id}`}
                     className={`${sass.Link} btn`}
                   >
-                    O'qish
+                    {`O'qish`}
                   </Link>
                   <ul className={`${sass.TagsUl} flexbox`}>
-                    {post.tags.map((tag) => (
-                      <li key={tag}>
-                        <Link
-                          href={`/tags/${tag}`}
-                          className={`${sass.Tag} basic-text`}
-                        >
-                          #{tag}
-                        </Link>
-                      </li>
-                    ))}
+                    {post.tags &&
+                      post.tags.map((tag) => (
+                        <li key={tag}>
+                          <Link
+                            href={`/tags/${tag}`}
+                            className={`${sass.Tag} basic-text`}
+                          >
+                            #{tag}
+                          </Link>
+                        </li>
+                      ))}
                   </ul>
                 </div>
               </div>
@@ -63,7 +67,7 @@ const RandomPosts = ({ posts }: { posts: Posts[] }): JSX.Element => {
         )}
       </div>
       <Link href={`/posts`} className={`${sass.Btn} btn`}>
-        Hammasi 
+        Hammasi
       </Link>
     </section>
   );

@@ -12,11 +12,14 @@ import Post from "@/new-portfolio/components/Post";
 //styles
 import sass from "@/new-portfolio/styles/pages/Posts.module.scss";
 import dynamic from "next/dynamic";
+import Image from "next/image";
+import { ReactNode } from "react";
+import moment from "moment";
 const Masonry = dynamic(() => import("react-layout-masonry"), { ssr: false });
 
 //receive data from xata
 export const getServerSideProps = async () => {
-  const records: Posts[] = await xataClientReq.db.Posts.sort(
+  const records = await xataClientReq.db.Posts.sort(
     "published_date",
     "desc"
   ).getAll();
@@ -26,18 +29,18 @@ export const getServerSideProps = async () => {
       records: records.map((record) => {
         return {
           ...record,
-          published_date: record.published_date.toDateString(),
+          published_date: record.published_date?.toISOString(),
         };
       }),
     },
   };
 };
 // UI
-const Posts = ({ records }: { records: Posts[] }): JSX.Element => {
+const PostsPage = ({ records }: { records: Posts[] }): ReactNode => {
   return (
     <MainLayout>
       <Head>
-        <title>Barcha Yozuvlar || SXNPAII's Universe 🌌</title>
+        <title>Barcha Yozuvlar || SXNPAII&apos;s Universe 🌌</title>
         <meta
           property="og:title"
           content="Barcha Yozuvlar || SXNPAII's Universe 🌌"
@@ -49,13 +52,13 @@ const Posts = ({ records }: { records: Posts[] }): JSX.Element => {
       </Head>
       <PageTitle
         title={`Yozuvlar`}
-        description={`Yozuvlar shaxsiy fikrlar asosida. Asosan yozuv mavzusiga shaxsiy ta'riflov. Hech qaysi mavzu va mavkuraviy go'yalarga jalb etmaydi.`}
+        description={` [@sxnpaii_blog](https://t.me/sxnpaii_blog)ga sig'magan postlar shu yerda joylanadi`}
       />
       {/* body */}
 
       <Masonry
         gap={10}
-        columns={{ 250: 1, 370: 2, 1000: 3, 2400: 4 }}
+        columns={{ 250: 1, 450: 2, 1000: 3, 2400: 4 }}
         className={
           records.length != 0
             ? records.length <= 4
@@ -79,7 +82,8 @@ const Posts = ({ records }: { records: Posts[] }): JSX.Element => {
           href={`https://t.me/sxnpaii_blog`}
           className={`${sass.btn} btn flexbox gap-3`}
         >
-          Qogani <img src="/icons/telegram.svg" width={23} height={23} alt="" />{" "}
+          Qogani{" "}
+          <Image src="/icons/telegram.svg" width={23} height={23} alt="" />{" "}
           kanalda
         </a>
       </div>
@@ -87,4 +91,4 @@ const Posts = ({ records }: { records: Posts[] }): JSX.Element => {
   );
 };
 
-export default Posts;
+export default PostsPage;

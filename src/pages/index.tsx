@@ -1,7 +1,7 @@
 // react next modules
 import Head from "next/head";
 import Image from "next/image";
-import { useRef, useState } from "react";
+import { RefObject, useRef, useState, type JSX } from "react";
 //xata
 import { Portfolio, Posts } from "@/new-portfolio/xata/xata";
 import { xataClientReq } from "../xata/xataRequest";
@@ -18,8 +18,8 @@ import RandomPosts from "@/new-portfolio/sections/HomePage/RandomPosts";
 
 // data from xata db
 export const getServerSideProps = async () => {
-  const records: Portfolio[] = await xataClientReq.db.Portfolio.getAll();
-  const posts: Posts[] = await xataClientReq.db.Posts.sort(
+  const records: Portfolio[] = await xataClientReq.db.Portfolio.getMany();
+  const posts = await xataClientReq.db.Posts.sort(
     "published_date",
     "desc"
   ).getMany({
@@ -46,7 +46,7 @@ export default function Home({
   records: Portfolio[];
   posts: Posts[];
 }): JSX.Element {
-  const containerRef = useRef();
+  const containerRef = useRef<HTMLElement | null>(null);
 
   return (
     <LocomotiveScrollProvider
@@ -63,7 +63,7 @@ export default function Home({
     >
       <Head>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>SXNPAII's Universe 🌌</title>
+        <title>{`SXNPAII's Universe 🌌`}</title>
         <meta property="og:title" content="SXNPAII's Universe 🌌" />
         <meta
           property="og:description"
@@ -74,7 +74,7 @@ export default function Home({
         <MainLayout>
           <Hero />
           <About />
-          <PortfolioSc records={records} />
+          {/* <PortfolioSc records={records} /> */}
           <RandomPosts posts={posts} />
           <Footer />
         </MainLayout>

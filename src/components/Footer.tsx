@@ -1,4 +1,7 @@
+/* eslint-disable @next/next/no-img-element */
 import sass from "@/new-portfolio/styles/components/Footer.module.scss";
+
+import type { JSX } from "react";
 
 const Footer = (): JSX.Element => {
   return (

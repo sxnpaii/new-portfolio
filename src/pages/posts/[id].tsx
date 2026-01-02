@@ -12,9 +12,12 @@ import PageTitle from "@/new-portfolio/components/PageTitle";
 import sass from "@/new-portfolio/styles/pages/Post.module.scss";
 import { styles } from "@/new-portfolio/styles/Basics";
 import moment from "moment";
+import type { JSX } from "react";
+import { GetServerSideProps } from "next";
+import Image from "next/image";
 //data fetching
-export const getServerSideProps = async ({ params }) => {
-  const post: Posts[] = await xataClientReq.db.Posts.read(`${params.id}`);
+export const getServerSideProps: GetServerSideProps = async ({ params }) => {
+  const post = await xataClientReq.db.Posts.read(`${params.id}`);
   if (!post) {
     return {
       notFound: true,
@@ -24,7 +27,7 @@ export const getServerSideProps = async ({ params }) => {
     props: {
       content: {
         ...post,
-        published_date: moment(post.published_date.toDateString()).format(
+        published_date: moment(post.published_date).format(
           "LLLL"
         ),
       },
@@ -46,18 +49,24 @@ const Post = ({ content }: { content: Posts }): JSX.Element => {
       </Head>
       <main className={` ${sass.Main}`}>
         <PageTitle
-          title={content.title}
-          description={content.description}
+          title={content.title ?? ""}
+          description={content.description ?? ""}
           isPost
         />
         {/*body*/}
         <div className={`${sass.Body}`}>
           {content.cover_img && (
-            <img src={content.cover_img.url} className={`${sass.Img}`} />
+            <Image
+              src={content.cover_img.url}
+              className={`${sass.Img}`}
+              alt="cover image"
+              width={1000}
+              height={400}
+            />
           )}
           {/* content */}
           <Md
-            markdown={content.content}
+            markdown={content.content ?? ""}
             className={` ${sass.Content} basic-text `}
           />
           {/* footer */}

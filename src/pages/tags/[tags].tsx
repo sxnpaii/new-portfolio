@@ -9,6 +9,8 @@ import Post from "@/new-portfolio/components/Post";
 import sass from "@/new-portfolio/styles/pages/Tag.module.scss";
 import Head from "next/head";
 
+import type { JSX } from "react";
+
 export const getServerSideProps = async ({ query }) => {
   const PostsWithTags: Posts[] = await xataClientReq.db.Posts.filter({
     tags: `${query.tags}`,

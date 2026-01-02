@@ -1,5 +1,4 @@
 import sass from "@/new-portfolio/styles/components/Modal.module.scss";
-import React from "react";
 
 const Modal = ({
   states,
@@ -7,7 +6,7 @@ const Modal = ({
   message,
 }: {
   states: any;
-  func: (e?: any) => void;
+  func?: (e?: any) => void;
   message?: string;
 }) => {
   return (

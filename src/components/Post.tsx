@@ -2,12 +2,35 @@ import Link from "next/link";
 import sass from "@/new-portfolio/styles/components/Post.module.scss";
 import moment from "moment";
 import "moment/locale/uz-latn";
-const Post = ({ post, editable = false, funcs, states }): JSX.Element => {
+import type { JSX } from "react";
+import Image from "next/image";
+import { Posts } from "../xata/xata";
+
+type Props = {
+  post: Posts;
+  editable?: boolean;
+  funcs?: unknown;
+  states?: unknown;
+};
+
+const Post = ({
+  post,
+  editable = false,
+  funcs,
+  states,
+}: Props): JSX.Element => {
   return (
-    <div className={`${sass.Post}`}>
+    <div className={`${sass.Post} group`}>
       {post.cover_img && (
-        <Link href={`/posts/${post.id}`}>
-          <img src={post.cover_img.url} alt={post.cover_img.name} />
+        <Link href={`/posts/${post.id}`} className="overflow-hidden!">
+          <Image
+            className="w-full transition"
+            src={post.cover_img.url}
+            alt={post.cover_img.name}
+            quality={95}
+            width={1000}
+            height={0}
+          />
         </Link>
       )}
 
@@ -18,12 +41,14 @@ const Post = ({ post, editable = false, funcs, states }): JSX.Element => {
             className={`${sass.PostTitle} heading-text flexbox`}
           >
             <div className={editable ? "flexbox gap-5" : "hidden"}>
-              <button
-                onClick={() => {
-                  states.setModal(true), funcs.remove(post);
-                }}
-              >
-                <img src="/icons/delete.svg" alt="" width={20} />
+              <button onClick={() => {}}>
+                <Image
+                  src="/icons/delete.svg"
+                  alt=""
+                  className="w-full h-auto"
+                  width={20}
+                  height={20}
+                />
               </button>
             </div>
             {post.title}
@@ -37,18 +62,19 @@ const Post = ({ post, editable = false, funcs, states }): JSX.Element => {
         </p>
         <div className={`${sass.PostFooter} flexbox`}>
           <Link href={`/posts/${post.id}`} className={` ${sass.PostLink} btn`}>
-            To'liq o'qish
+            {`To'liq o'qish`}
           </Link>
           <div className={`${sass.Tags} flexbox gap-2`}>
-            {post.tags.map((tag) => (
-              <Link
-                href={`/tags/${tag}`}
-                key={tag}
-                className={`${sass.PostTag} basic-text `}
-              >
-                #{tag}
-              </Link>
-            ))}
+            {post.tags &&
+              post.tags.map((tag: string) => (
+                <Link
+                  href={`/tags/${tag}`}
+                  key={tag}
+                  className={`${sass.PostTag} basic-text `}
+                >
+                  #{tag}
+                </Link>
+              ))}
           </div>
         </div>
       </div>

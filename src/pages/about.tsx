@@ -8,6 +8,8 @@ import { styles } from "@/new-portfolio/styles/Basics";
 //utils
 import { AboutPageMdContent } from "@/new-portfolio/utils";
 
+import type { JSX } from "react";
+
 const About = (): JSX.Element => {
   return (
     <MainLayout>

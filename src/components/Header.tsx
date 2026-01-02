@@ -4,6 +4,8 @@ import { RouteLinks } from "../utils";
 //styles
 import sass from "@/new-portfolio/styles/components/Header.module.scss";
 
+import type { JSX } from "react";
+
 const Header = (): JSX.Element => {
   return (
     <header className={`fixed w-full left-0 lg:flex ${sass.Header}`}>
